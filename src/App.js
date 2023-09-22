@@ -1,10 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import Header from "./components/Header";
 
 const App = () => {
   return (
     <div>
-      <h1>Hello there!!</h1>
+      <Header />
     </div>
   );
 };
