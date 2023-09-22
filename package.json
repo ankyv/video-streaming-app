@@ -2,7 +2,6 @@
   "name": "youtube-clone-app",
   "version": "1.0.0",
   "description": "This repository is about building a React Project",
-  "main": "index.js",
   "scripts": {
     "test": "jest"
   },
@@ -17,7 +16,8 @@
   },
   "homepage": "https://github.com/iankitvarshney/youtube-clone-app#readme",
   "devDependencies": {
-    "parcel": "^2.9.3"
+    "parcel": "^2.9.3",
+    "process": "^0.11.10"
   },
   "dependencies": {
     "react": "^18.2.0",
