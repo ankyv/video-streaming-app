@@ -18,11 +18,15 @@ body {
 /* ------------------------ Header Styles ------------------------ */
 
 .header {
+  background-color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.4rem 1.6rem;
-  margin-bottom: 0.8rem;
+  height: 60px;
+  /* margin-bottom: 0.8rem; */
+  position: sticky;
+  top: 0;
 }
 
 .header-left {
@@ -77,6 +81,7 @@ body {
   margin-right: 1.4rem;
   max-width: 600px;
   width: 100%;
+  user-select: none;
 }
 
 .search-container input {
@@ -145,15 +150,20 @@ body {
 /* ------------------------ Body Styles ------------------------ */
 
 .body {
+  background-color: #fff;
   display: flex;
+  align-items: flex-start;
 }
 
 /* ------------------------ SidebarSmall Styles ------------------------ */
 
 .sidebar-small {
+  background-color: #fff;
   display: inline-block;
   padding-left: 0.4rem;
   user-select: none;
+  position: sticky;
+  top: 60px;
 }
 
 .sidebar-small > div {
@@ -177,9 +187,12 @@ body {
 /* ------------------------ SidebarLarge Styles ------------------------ */
 
 .sidebar-large {
+  background-color: #fff;
   display: inline-block;
   padding-left: 1rem;
   user-select: none;
+  position: sticky;
+  top: 60px;
 }
 
 .sidebar-large .sidebar-section {
@@ -208,6 +221,7 @@ body {
 /* ------------------------ Main Styles ------------------------ */
 
 .main {
+  background-color: #fff;
   flex-grow: 1;
   /* width: 100%; */
   margin-left: 3rem;
@@ -216,8 +230,11 @@ body {
 /* ------------------------ RecentLinks Styles ------------------------ */
 
 .recent-links {
+  background-color: #fff;
   height: 60px;
   overflow: hidden;
+  position: sticky;
+  top: 60px;
 }
 
 .recent-link {
