@@ -204,3 +204,36 @@ body {
   margin-left: 2.6rem;
   margin-top: 0.2rem;
 }
+
+/* ------------------------ Main Styles ------------------------ */
+
+.main {
+  flex-grow: 1;
+  /* width: 100%; */
+  margin-left: 3rem;
+}
+
+/* ------------------------ RecentLinks Styles ------------------------ */
+
+.recent-links {
+  height: 60px;
+  overflow: hidden;
+}
+
+.recent-link {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 0.8rem;
+  display: inline-block;
+  padding: 0.8rem 1rem;
+  margin: 1.2rem 1.2rem 1.2rem 0;
+  cursor: pointer;
+  user-select: none;
+}
+
+.recent-link:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.recent-link > p {
+  font-size: 1.4rem;
+}
