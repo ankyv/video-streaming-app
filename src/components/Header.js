@@ -7,12 +7,21 @@ import {
   SearchIcon,
   VideoAddIcon,
 } from "../icons";
+import { useDispatch } from "react-redux";
+import { toggleSidebar } from "../utils/sidebarSlice";
 
 const Header = () => {
+  const dispatch = useDispatch();
+
   return (
     <div className="header">
       <div className="header-left">
-        <div className="menu-icon">
+        <div
+          onClick={() => {
+            dispatch(toggleSidebar());
+          }}
+          className="menu-icon"
+        >
           <MenuIcon />
         </div>
         <div className="logo-container">
