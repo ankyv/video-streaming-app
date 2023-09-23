@@ -27,6 +27,7 @@ body {
   /* margin-bottom: 0.8rem; */
   position: sticky;
   top: 0;
+  z-index: 10;
 }
 
 .header-left {
@@ -235,6 +236,7 @@ body {
   overflow: hidden;
   position: sticky;
   top: 60px;
+  z-index: 10;
 }
 
 .recent-link {
@@ -252,5 +254,105 @@ body {
 }
 
 .recent-link > p {
+  font-size: 1.4rem;
+}
+
+/* ------------------------ VideoSection Styles ------------------------ */
+
+.video-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding-top: 1.4rem;
+}
+
+/* ------------------------ VideoCard Styles ------------------------ */
+
+.video-card {
+  width: 338px;
+  margin-right: 1.6rem;
+  margin-bottom: 5rem;
+}
+
+.video-card-thumbnail {
+  position: relative;
+  user-select: none;
+}
+
+.video-card-thumbnail .video-thumbnail {
+  border-radius: 1.2rem;
+  height: 190px;
+}
+
+.video-card-thumbnail .video-thumbnail img {
+  border-radius: inherit;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.video-card-thumbnail .video-timestamp {
+  background-color: #282828;
+  border-radius: 0.4rem;
+  color: #fff;
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+}
+
+.video-card-thumbnail .video-timestamp p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 0.2rem 0.4rem;
+}
+
+.video-card-details {
+  display: flex;
+}
+
+.video-card-details .video-channel .video-channel-image {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 10rem;
+  height: 36px;
+  width: 36px;
+  margin: 1.2rem 1.2rem 0 0;
+}
+
+.video-card-details .video-details {
+  padding-top: 1.2rem;
+}
+
+.video-card-details .video-details .video-title {
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 2.4rem;
+  max-height: 5rem;
+  margin-bottom: 0.6rem;
+  overflow: hidden;
+}
+
+.video-card-details .video-details .channel-title {
+  color: #606060;
+  font-size: 1.4rem;
+  letter-spacing: 0.4px;
+  margin-bottom: 0.6rem;
+}
+
+.video-card-details .video-details .video-stats {
+  color: #606060;
+  display: flex;
+}
+
+.video-card-details .video-details .video-viewcount {
+  font-size: 1.4rem;
+}
+
+.video-card-details .video-details .interpunct {
+  font-weight: 700;
+  margin: 0 0.4rem;
+}
+
+.video-card-details .video-details .video-publish-time {
   font-size: 1.4rem;
 }

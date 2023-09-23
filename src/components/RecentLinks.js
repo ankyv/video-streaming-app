@@ -20,7 +20,7 @@ const RecentLinks = () => {
     <div className="recent-links">
       {links.map((linkText) => {
         return (
-          <div className="recent-link">
+          <div key={linkText} className="recent-link">
             <p>{linkText}</p>
           </div>
         );
