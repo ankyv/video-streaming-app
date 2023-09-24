@@ -39,7 +39,7 @@ const SidebarLarge = () => {
           <p>Watch later</p>
         </div>
         <div>
-          <LikeIcon />
+          <LikeIcon size={24} />
           <p>Liked videos</p>
         </div>
       </div>
