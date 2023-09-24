@@ -4,19 +4,19 @@ const SidebarSmall = () => {
   return (
     <div className="sidebar-small">
       <div>
-        <HomeIcon />
+        <HomeIcon color={"var(--text-clr)"} />
         <p>Home</p>
       </div>
       <div>
-        <ShortsIcon />
+        <ShortsIcon color={"var(--text-clr)"} />
         <p>Shorts</p>
       </div>
       <div>
-        <SubscriptionsIcon />
+        <SubscriptionsIcon color={"var(--text-clr)"} />
         <p>Subscriptions</p>
       </div>
       <div>
-        <LibraryIcon />
+        <LibraryIcon color={"var(--text-clr)"} />
         <p>Library</p>
       </div>
     </div>

@@ -13,33 +13,33 @@ const SidebarLarge = () => {
     <div className="sidebar-large">
       <div className="sidebar-section">
         <div>
-          <HomeIcon />
+          <HomeIcon color={"var(--text-clr)"} />
           <p>Home</p>
         </div>
         <div>
-          <ShortsIcon />
+          <ShortsIcon color={"var(--text-clr)"} />
           <p>Shorts</p>
         </div>
         <div>
-          <SubscriptionsIcon />
+          <SubscriptionsIcon color={"var(--text-clr)"} />
           <p>Subscriptions</p>
         </div>
       </div>
       <div className="sidebar-section">
         <div>
-          <LibraryIcon />
+          <LibraryIcon color={"var(--text-clr)"} />
           <p>Library</p>
         </div>
         <div>
-          <HistoryIcon />
+          <HistoryIcon color={"var(--text-clr)"} />
           <p>History</p>
         </div>
         <div>
-          <WatchLaterIcon />
+          <WatchLaterIcon color={"var(--text-clr)"} />
           <p>Watch later</p>
         </div>
         <div>
-          <LikeIcon size={24} />
+          <LikeIcon color={"var(--text-clr)"} size={24} />
           <p>Liked videos</p>
         </div>
       </div>

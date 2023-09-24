@@ -62,23 +62,23 @@ const VideoWatch = () => {
           <div className="video-options">
             <div>
               <div className="like-btn option-btn">
-                <LikeIcon size={22} />
+                <LikeIcon color={"var(--text-clr)"} size={22} />
                 <p>{likeCount}</p>
               </div>
               <div className="dislike-btn option-btn">
-                <DislikeIcon />
+                <DislikeIcon color={"var(--text-clr)"} />
               </div>
             </div>
             <div className="share-btn option-btn">
-              <ShareIcon />
+              <ShareIcon color={"var(--text-clr)"} />
               <p>Share</p>
             </div>
             <div className="download-btn option-btn">
-              <DownloadIcon />
+              <DownloadIcon color={"var(--text-clr)"} />
               <p>Download</p>
             </div>
             <div className="more-btn option-btn">
-              <MoreIcon />
+              <MoreIcon color={"var(--text-clr)"} />
             </div>
           </div>
         </div>

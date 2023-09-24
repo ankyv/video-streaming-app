@@ -1,5 +1,7 @@
 import {
   AccountIcon,
+  DarkIcon,
+  LightIcon,
   LogoIcon,
   MenuIcon,
   MicIcon,
@@ -9,9 +11,18 @@ import {
 } from "../icons";
 import { useDispatch } from "react-redux";
 import { toggleSidebar } from "../utils/sidebarSlice";
+import { toggleTheme } from "../utils/themeSlice";
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
 
 const Header = () => {
   const dispatch = useDispatch();
+
+  const theme = useSelector((store) => store.theme.theme);
+
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
 
   return (
     <div className="header">
@@ -22,10 +33,10 @@ const Header = () => {
           }}
           className="menu-icon"
         >
-          <MenuIcon />
+          <MenuIcon color={"var(--text-clr)"} />
         </div>
         <div className="logo-container">
-          <LogoIcon />
+          <LogoIcon color={"var(--text-clr)"} />
           <h1>Project</h1>
         </div>
       </div>
@@ -33,22 +44,33 @@ const Header = () => {
         <div className="search-container">
           <input type="text" placeholder="Search" />
           <button>
-            <SearchIcon />
+            <SearchIcon color={"var(--text-clr)"} />
           </button>
         </div>
         <div className="mic-icon">
-          <MicIcon />
+          <MicIcon color={"var(--text-clr)"} />
         </div>
       </div>
       <div className="header-right">
-        <div>
-          <VideoAddIcon />
+        <div
+          onClick={() => {
+            dispatch(toggleTheme());
+          }}
+        >
+          {theme === "light" ? (
+            <DarkIcon color={"var(--text-clr)"} />
+          ) : (
+            <LightIcon color={"var(--text-clr)"} />
+          )}
         </div>
         <div>
-          <NotificationIcon />
+          <VideoAddIcon color={"var(--text-clr)"} />
         </div>
         <div>
-          <AccountIcon />
+          <NotificationIcon color={"var(--text-clr)"} />
+        </div>
+        <div>
+          <AccountIcon color={"var(--text-clr)"} />
         </div>
       </div>
     </div>
