@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { API_DATA_URL } from "../constants";
 import "dotenv/config";
 import VideoCard from "./VideoCard";
+import { Link } from "react-router-dom";
 
 const VideoSection = () => {
   const [videoList, setVideoList] = useState(null);
@@ -22,7 +23,11 @@ const VideoSection = () => {
   return (
     <div className="video-section">
       {videoList.map((video) => {
-        return <VideoCard key={video?.id} video={video} />;
+        return (
+          <Link to={"/watch/" + video?.id} key={video?.id}>
+            <VideoCard video={video} />
+          </Link>
+        );
       })}
     </div>
   );
