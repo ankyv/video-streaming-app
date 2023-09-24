@@ -60,30 +60,30 @@ export const getDuration = (duration) => {
   return durationString;
 };
 
-export const getViewCount = (viewCount) => {
+export const getCount = (count) => {
   const oneBillion = 1000000000;
   const oneMillion = 1000000;
   const oneThousand = 1000;
   let views = 0;
-  let viewCountString = "";
+  let countString = "";
 
-  if (Math.floor(viewCount / oneBillion)) {
-    views = viewCount / oneBillion;
+  if (Math.floor(count / oneBillion)) {
+    views = count / oneBillion;
     views = views < 10 ? Math.round(views * 10) / 10 : Math.floor(views);
-    viewCountString = viewCountString.concat(views + "B");
-  } else if (Math.floor(viewCount / oneMillion)) {
-    views = viewCount / oneMillion;
+    countString = countString.concat(views + "B");
+  } else if (Math.floor(count / oneMillion)) {
+    views = count / oneMillion;
     views = views < 10 ? Math.round(views * 10) / 10 : Math.floor(views);
-    viewCountString = viewCountString.concat(views + "M");
-  } else if (Math.floor(viewCount / oneThousand)) {
-    views = viewCount / oneThousand;
+    countString = countString.concat(views + "M");
+  } else if (Math.floor(count / oneThousand)) {
+    views = count / oneThousand;
     views = views < 10 ? Math.round(views * 10) / 10 : Math.floor(views);
-    viewCountString = viewCountString.concat(views + "K");
+    countString = countString.concat(views + "K");
   } else {
-    viewCountString = viewCountString.concat(viewCount);
+    countString = countString.concat(count);
   }
 
-  return viewCountString;
+  return countString;
 };
 
 export const getPublishTime = (publishTime) => {

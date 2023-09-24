@@ -493,8 +493,11 @@ body {
   background-color: rgba(0, 0, 0, 0.05);
   border-radius: 1.2rem;
   font-size: 1.4rem;
-  padding: 1.4rem;
+  height: 110px;
   width: 100%;
+  padding: 1.4rem;
+  margin-bottom: 2rem;
+  overflow: hidden;
 }
 
 .video-watch .video-section .video-description .video-stats {

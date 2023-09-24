@@ -2,7 +2,7 @@ import {
   getDuration,
   getPublishTime,
   getThumbnailSrc,
-  getViewCount,
+  getCount,
 } from "../utils/helper";
 
 const VideoCard = ({ video }) => {
@@ -14,7 +14,7 @@ const VideoCard = ({ video }) => {
   const duration = getDuration(video?.contentDetails?.duration);
   const videoTitle = video?.snippet?.title;
   const channelTitle = video?.snippet?.channelTitle;
-  const viewCount = getViewCount(video?.statistics?.viewCount);
+  const viewCount = getCount(video?.statistics?.viewCount);
   const publishTime = getPublishTime(video?.snippet?.publishedAt);
 
   return (
@@ -35,7 +35,7 @@ const VideoCard = ({ video }) => {
           <h2 className="video-title">{videoTitle}</h2>
           <p className="channel-title">{channelTitle}</p>
           <div className="video-stats">
-            <p className="video-viewcount">{viewCount}</p>
+            <p className="video-viewcount">{viewCount} views</p>
             <p className="interpunct">•</p>
             <p className="video-publish-time">{publishTime}</p>
           </div>

@@ -7,6 +7,7 @@ import {
   MoreIcon,
   ShareIcon,
 } from "../icons";
+import { getCount, getPublishTime } from "../utils/helper";
 
 const VideoWatch = () => {
   const { id } = useParams();
@@ -18,9 +19,9 @@ const VideoWatch = () => {
   // const channelSrc = "";
   const videoTitle = video?.snippet?.title;
   const channelTitle = video?.snippet?.channelTitle;
-  const likeCount = video?.statistics?.likeCount;
-  const viewCount = video?.statistics?.viewCount;
-  const publishTime = video?.snippet?.publishedAt;
+  const likeCount = getCount(video?.statistics?.likeCount);
+  const viewCount = getCount(video?.statistics?.viewCount);
+  const publishTime = getPublishTime(video?.snippet?.publishedAt);
   const description = video?.snippet?.description;
 
   useEffect(() => {
@@ -83,7 +84,7 @@ const VideoWatch = () => {
         </div>
         <div className="video-description">
           <div className="video-stats">
-            <p className="video-viewcount">{viewCount}</p>
+            <p className="video-viewcount">{viewCount} views</p>
             <p className="video-publish-time">{publishTime}</p>
           </div>
           <pre className="video-description-text">{description}</pre>
