@@ -1,27 +1,21 @@
+import {
+  getDuration,
+  getPublishTime,
+  getThumbnailSrc,
+  getViewCount,
+} from "../utils/helper";
+
 const VideoCard = ({ video }) => {
   // const videoId = video?.id;
   // const channelId = video?.snippet?.channelId;
-  const duration = video?.contentDetails?.duration;
   // const channelSrc = "";
+
+  const thumbnailSrc = getThumbnailSrc(video?.snippet?.thumbnails);
+  const duration = getDuration(video?.contentDetails?.duration);
   const videoTitle = video?.snippet?.title;
   const channelTitle = video?.snippet?.channelTitle;
-  const viewCount = video?.statistics?.viewCount;
-  const publishTime = video?.snippet?.publishedAt;
-
-  const thumbnails = video?.snippet?.thumbnails;
-  let thumbnailSrc;
-
-  if (thumbnails?.maxres?.url) {
-    thumbnailSrc = thumbnails?.maxres?.url;
-  } else if (thumbnails?.standard?.url) {
-    thumbnailSrc = thumbnails?.standard?.url;
-  } else if (thumbnails?.high?.url) {
-    thumbnailSrc = thumbnails?.high?.url;
-  } else if (thumbnails?.medium?.url) {
-    thumbnailSrc = thumbnails?.medium?.url;
-  } else if (thumbnails?.default?.url) {
-    thumbnailSrc = thumbnails?.default?.url;
-  }
+  const viewCount = getViewCount(video?.statistics?.viewCount);
+  const publishTime = getPublishTime(video?.snippet?.publishedAt);
 
   return (
     <div className="video-card">
