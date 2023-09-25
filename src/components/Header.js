@@ -13,9 +13,12 @@ import { useDispatch } from "react-redux";
 import { toggleSidebar } from "../utils/sidebarSlice";
 import { toggleTheme } from "../utils/themeSlice";
 import { useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const Header = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchResults, setSearchResults] = useState(null);
+
   const dispatch = useDispatch();
 
   const theme = useSelector((store) => store.theme.theme);
@@ -23,6 +26,24 @@ const Header = () => {
   useEffect(() => {
     document.body.className = theme;
   }, [theme]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      getSearchResults();
+    }, 200);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [searchQuery]);
+
+  async function getSearchResults() {
+    const response = await fetch(
+      `http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=${searchQuery}`
+    );
+    const json = await response.json();
+    setSearchResults(json[1]);
+  }
 
   return (
     <div className="header">
@@ -42,10 +63,34 @@ const Header = () => {
       </div>
       <div className="header-mid">
         <div className="search-container">
-          <input type="text" placeholder="Search" />
+          <input
+            type="text"
+            placeholder="Search"
+            value={searchQuery}
+            onChange={(e) => {
+              setSearchQuery(e.target.value);
+            }}
+          />
           <button>
             <SearchIcon color={"var(--text-clr)"} />
           </button>
+          {searchResults?.length > 0 && (
+            <div className="search-results">
+              {searchResults?.map((searchResult) => {
+                return (
+                  <li
+                    onClick={() => {
+                      setSearchQuery(searchResult);
+                    }}
+                    className="search-result"
+                  >
+                    <SearchIcon color={"var(--text-clr)"} size={18} />
+                    <p>{searchResult}</p>
+                  </li>
+                );
+              })}
+            </div>
+          )}
         </div>
         <div className="mic-icon">
           <MicIcon color={"var(--text-clr)"} />
