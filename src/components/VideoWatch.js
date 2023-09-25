@@ -7,16 +7,18 @@ import {
   MoreIcon,
   ShareIcon,
 } from "../icons";
-import { getCount, getPublishTime } from "../utils/helper";
+import { getCount, getPublishTime, getThumbnailSrc } from "../utils/helper";
 
 const VideoWatch = () => {
   const { id } = useParams();
 
   const [video, setVideo] = useState(null);
+  const [channel, setChannel] = useState(null);
 
-  // const videoId = video?.id;
-  // const channelId = video?.snippet?.channelId;
-  // const channelSrc = "";
+  const channelId = video?.snippet?.channelId;
+  const channelThumbnailSrc = getThumbnailSrc(channel?.snippet?.thumbnails);
+  const subscriberCount = getCount(channel?.statistics?.subscriberCount);
+
   const videoTitle = video?.snippet?.title;
   const channelTitle = video?.snippet?.channelTitle;
   const likeCount = getCount(video?.statistics?.likeCount);
@@ -28,12 +30,26 @@ const VideoWatch = () => {
     getVideoDetails();
   }, []);
 
+  useEffect(() => {
+    if (channelId) {
+      getChannelDetails();
+    }
+  }, [channelId]);
+
   async function getVideoDetails() {
     const response = await fetch(
       `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${id}&key=${process.env.API_KEY}`
     );
     const json = await response.json();
     setVideo(json?.items[0]);
+  }
+
+  async function getChannelDetails() {
+    const response = await fetch(
+      `https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=${channelId}&key=${process.env.API_KEY}`
+    );
+    const json = await response.json();
+    setChannel(json?.items[0]);
   }
 
   if (!video) return null;
@@ -52,10 +68,14 @@ const VideoWatch = () => {
         <h1 className="video-title">{videoTitle}</h1>
         <div className="video-info">
           <div className="channel-section">
-            <div className="channel-image"></div>
+            <div className="channel-image">
+              <img src={channelThumbnailSrc} />
+            </div>
             <div className="channel-info">
               <h2 className="channel-title">{channelTitle}</h2>
-              <p className="channel-subscribers-count">subscribers</p>
+              <p className="channel-subscribers-count">
+                {subscriberCount} subscribers
+              </p>
             </div>
             <button className="subscribe-btn">Subscribe</button>
           </div>

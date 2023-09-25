@@ -377,6 +377,14 @@ a {
   margin: 1.2rem 1.2rem 0 0;
 }
 
+.video-card-details .video-channel .video-channel-image img {
+  border-radius: inherit;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 .video-card-details .video-details {
   padding-top: 1.2rem;
 }
@@ -477,6 +485,14 @@ a {
   height: 40px;
   width: 40px;
   margin-right: 1.4rem;
+}
+
+.video-watch .video-section .video-info .channel-section .channel-image img {
+  border-radius: inherit;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .video-watch .video-section .video-info .channel-section .channel-info {

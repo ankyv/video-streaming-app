@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
   getDuration,
   getPublishTime,
@@ -6,9 +7,10 @@ import {
 } from "../utils/helper";
 
 const VideoCard = ({ video }) => {
-  // const videoId = video?.id;
-  // const channelId = video?.snippet?.channelId;
-  // const channelSrc = "";
+  const [channel, setChannel] = useState(null);
+
+  const channelId = video?.snippet?.channelId;
+  const channelThumbnailSrc = getThumbnailSrc(channel?.snippet?.thumbnails);
 
   const thumbnailSrc = getThumbnailSrc(video?.snippet?.thumbnails);
   const duration = getDuration(video?.contentDetails?.duration);
@@ -16,6 +18,18 @@ const VideoCard = ({ video }) => {
   const channelTitle = video?.snippet?.channelTitle;
   const viewCount = getCount(video?.statistics?.viewCount);
   const publishTime = getPublishTime(video?.snippet?.publishedAt);
+
+  useEffect(() => {
+    getChannelDetails();
+  }, []);
+
+  async function getChannelDetails() {
+    const response = await fetch(
+      `https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=${channelId}&key=${process.env.API_KEY}`
+    );
+    const json = await response.json();
+    setChannel(json?.items[0]);
+  }
 
   return (
     <div className="video-card">
@@ -29,7 +43,9 @@ const VideoCard = ({ video }) => {
       </div>
       <div className="video-card-details">
         <div className="video-channel">
-          <div className="video-channel-image"></div>
+          <div className="video-channel-image">
+            <img src={channelThumbnailSrc} />
+          </div>
         </div>
         <div className="video-details">
           <h2 className="video-title">{videoTitle}</h2>
