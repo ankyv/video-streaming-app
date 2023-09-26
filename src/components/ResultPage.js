@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import ChannelContent from "./ChannelContent";
 import PlaylistContent from "./PlaylistContent";
 import VideoContent from "./VideoContent";
@@ -32,7 +32,11 @@ const ResultPage = () => {
         } else if (item?.id?.kind === "youtube#playlist") {
           return <PlaylistContent key={item?.etag} playlist={item} />;
         } else if (item?.id?.kind === "youtube#video") {
-          return <VideoContent key={item?.etag} video={item} />;
+          return (
+            <Link key={item?.etag} to={"/watch/" + item?.id?.videoId}>
+              <VideoContent video={item} />
+            </Link>
+          );
         } else {
           return null;
         }
