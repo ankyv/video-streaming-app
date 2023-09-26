@@ -15,6 +15,7 @@
   --btn-bg-hover: rgba(0, 0, 0, 0.08);
   --subscribe-btn-hover: #282828ec;
   --search-bg-clr: #fff;
+  --playlist-bg-clr: #595959cc;
 }
 
 .dark {
@@ -26,6 +27,7 @@
   --btn-bg-hover: rgb(61, 61, 61);
   --subscribe-btn-hover: #d9d9d9;
   --search-bg-clr: rgb(42, 42, 42);
+  --playlist-bg-clr: #595959cc;
 }
 
 html {
@@ -640,4 +642,240 @@ a {
 .video-watch .suggested-video-section {
   /* flex-grow: 1; */
   padding: 2.4rem 2.4rem 0 0;
+}
+
+/* ------------------------ ChannelContent Styles ------------------------ */
+
+.channel-content {
+  border-bottom: 1px solid var(--border-clr);
+  display: flex;
+  align-items: center;
+  padding: 1rem 0 2.6rem;
+  margin-bottom: 2.4rem;
+  cursor: pointer;
+}
+
+.channel-content .channel-content-image {
+  width: 20%;
+  margin-right: 2rem;
+}
+
+.channel-content .channel-image {
+  border-radius: 10rem;
+  height: 136px;
+  width: 136px;
+  margin: auto;
+}
+
+.channel-content .channel-image img {
+  border-radius: inherit;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.channel-content .channel-data {
+  /* width: 60%; */
+  padding: 0 1.6rem 1.6rem 0;
+}
+
+.channel-content .channel-data .channel-title {
+  margin-bottom: 0.8rem;
+}
+
+.channel-content .channel-data .channel-title h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.channel-content .channel-data .channel-info {
+  color: var(--text-light);
+  font-size: 1.2rem;
+  display: flex;
+  margin-bottom: 0.4rem;
+}
+
+.channel-content .channel-data .channel-info .interpunct {
+  font-weight: 600;
+  margin: 0 0.4rem;
+}
+
+.channel-content .channel-data .channel-description {
+  color: var(--text-light);
+  font-size: 1.2rem;
+}
+
+.channel-content .subscribe-btn {
+  /* background-color: #282828; */
+  background-color: var(--text-clr);
+  border: none;
+  border-radius: 10rem;
+  /* color: #fff; */
+  color: var(--bg-clr);
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 1rem 1.6rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.channel-content .subscribe-btn:hover {
+  /* background-color: #282828ec; */
+  background-color: var(--subscribe-btn-hover);
+}
+
+/* ------------------------ PlaylistContent Styles ------------------------ */
+
+.playlist-content {
+  display: flex;
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+
+.playlist-content .playlist-thumbnail {
+  position: relative;
+  width: 360px;
+  margin-right: 2rem;
+}
+
+.playlist-content .playlist-thumbnail .playlist-thumbnail-image {
+  border-radius: 1.2rem;
+  height: 202px;
+  width: 100%;
+}
+
+.playlist-content .playlist-thumbnail .playlist-thumbnail-image img {
+  border-radius: inherit;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.playlist-content .playlist-thumbnail .playlist-video-count {
+  background-color: var(--playlist-bg-clr);
+  border-radius: 0 0 1.2rem 1.2rem;
+  /* height: 2.4rem; */
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.playlist-content .playlist-thumbnail .playlist-video-count p {
+  color: var(--bg-clr);
+  font-size: 1.2rem;
+  padding: 0.4rem 1rem;
+  text-align: right;
+}
+
+.playlist-content .playlist-details .playlist-title h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.playlist-content .playlist-details .channel-title {
+  color: var(--text-light);
+  font-size: 1.2rem;
+  margin-bottom: 1.4rem;
+}
+
+.playlist-content .playlist-details .playlist-btn {
+  background-color: transparent;
+  border: none;
+  color: var(--text-light);
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ------------------------ VideoContent Styles ------------------------ */
+
+.video-content {
+  display: flex;
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+
+.video-content .video-thumbnail {
+  width: 360px;
+  position: relative;
+  margin-right: 2rem;
+}
+
+.video-content .video-thumbnail .video-thumbnail-image {
+  border-radius: 1.2rem;
+  height: 202px;
+  width: 100%;
+}
+
+.video-content .video-thumbnail .video-thumbnail-image img {
+  border-radius: inherit;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.video-content .video-thumbnail .video-timestamp {
+  background-color: #282828;
+  /* background-color: var(--text-clr); */
+  border-radius: 0.4rem;
+  color: #fff;
+  /* color: var(--bg-clr); */
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+}
+
+.video-content .video-thumbnail .video-timestamp p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 0.2rem 0.4rem;
+}
+
+.video-content .video-details .video-title h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.video-content .video-details .video-stats {
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.video-content .video-details .video-stats .interpunct {
+  font-weight: 600;
+  margin: 0 0.4rem;
+}
+
+.video-content .video-details .video-channel {
+  color: var(--text-light);
+  display: flex;
+  font-size: 1.2rem;
+  align-items: center;
+  padding: 1.2rem 0;
+}
+
+.video-content .video-details .video-channel .channel-image {
+  background-color: var(--btn-bg-hover);
+  border-radius: 10rem;
+  height: 24px;
+  width: 24px;
+  margin-right: 0.8rem;
+}
+
+.video-content .video-details .video-channel .channel-image img {
+  border-radius: inherit;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.video-content .video-details .video-description {
+  color: var(--text-light);
+  font-size: 1.2rem;
 }

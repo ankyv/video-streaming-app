@@ -1,11 +1,11 @@
+import { Outlet } from "react-router-dom";
 import RecentLinks from "./RecentLinks";
-import VideoSection from "./VideoSection";
 
 const Main = () => {
   return (
     <div className="main">
       <RecentLinks />
-      <VideoSection />
+      <Outlet />
     </div>
   );
 };

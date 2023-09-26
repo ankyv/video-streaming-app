@@ -6,6 +6,9 @@ import { Provider } from "react-redux";
 import store from "./utils/store";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import VideoWatch from "./components/VideoWatch";
+import Main from "./components/Main";
+import VideoSection from "./components/VideoSection";
+import ResultPage from "./components/ResultPage";
 
 const App = () => {
   return (
@@ -24,6 +27,22 @@ const appRouter = createBrowserRouter([
       {
         path: "/",
         element: <Body />,
+        children: [
+          {
+            path: "/",
+            element: <Main />,
+            children: [
+              {
+                path: "/",
+                element: <VideoSection />,
+              },
+              {
+                path: "/results/:searchQuery",
+                element: <ResultPage />,
+              },
+            ],
+          },
+        ],
       },
       {
         path: "/watch/:id",

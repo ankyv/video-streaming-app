@@ -1,7 +1,7 @@
 import SidebarSmall from "./SidebarSmall";
 import SidebarLarge from "./SidebarLarge";
 import { useSelector } from "react-redux";
-import Main from "./Main";
+import { Outlet } from "react-router-dom";
 
 const Body = () => {
   const isVisible = useSelector((store) => store.sidebar.isVisible);
@@ -9,7 +9,7 @@ const Body = () => {
   return (
     <div className="body">
       {isVisible ? <SidebarLarge /> : <SidebarSmall />}
-      <Main />
+      <Outlet />
     </div>
   );
 };

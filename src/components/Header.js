@@ -14,10 +14,13 @@ import { toggleSidebar } from "../utils/sidebarSlice";
 import { toggleTheme } from "../utils/themeSlice";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState(null);
+
+  const modifiedQuery = searchQuery.replace(" ", "%20");
 
   const dispatch = useDispatch();
 
@@ -71,14 +74,22 @@ const Header = () => {
               setSearchQuery(e.target.value);
             }}
           />
-          <button>
-            <SearchIcon color={"var(--text-clr)"} />
-          </button>
+          <Link to={"/results/" + modifiedQuery}>
+            <button
+              onClick={() => {
+                setSearchQuery("");
+                setSearchResults(null);
+              }}
+            >
+              <SearchIcon color={"var(--text-clr)"} />
+            </button>
+          </Link>
           {searchResults?.length > 0 && (
             <div className="search-results">
               {searchResults?.map((searchResult) => {
                 return (
                   <li
+                    key={searchResult}
                     onClick={() => {
                       setSearchQuery(searchResult);
                     }}

@@ -9,10 +9,14 @@ export const getThumbnailSrc = (thumbnails) => {
     return thumbnails?.medium?.url;
   } else if (thumbnails?.default?.url) {
     return thumbnails?.default?.url;
+  } else {
+    return null;
   }
 };
 
 export const getDuration = (duration) => {
+  if (!duration) return null;
+
   let hours, minutes, seconds, index;
   let start = 2;
   let durationString = "";
@@ -61,6 +65,8 @@ export const getDuration = (duration) => {
 };
 
 export const getCount = (count) => {
+  if (!count) return null;
+
   const oneBillion = 1000000000;
   const oneMillion = 1000000;
   const oneThousand = 1000;
@@ -87,6 +93,8 @@ export const getCount = (count) => {
 };
 
 export const getPublishTime = (publishTime) => {
+  if (!publishTime) return null;
+
   const currentDate = new Date();
   const publishDate = new Date(publishTime);
   const milliseconds = currentDate - publishDate;
