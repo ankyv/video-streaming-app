@@ -685,6 +685,7 @@ a {
 }
 
 .channel-content .channel-data .channel-title h2 {
+  color: var(--text-clr);
   font-size: 1.8rem;
   font-weight: 500;
 }
@@ -763,13 +764,15 @@ a {
 }
 
 .playlist-content .playlist-thumbnail .playlist-video-count p {
-  color: var(--bg-clr);
+  /* color: var(--bg-clr); */
+  color: #fff;
   font-size: 1.2rem;
   padding: 0.4rem 1rem;
   text-align: right;
 }
 
 .playlist-content .playlist-details .playlist-title h2 {
+  color: var(--text-clr);
   font-size: 1.8rem;
   font-weight: 500;
 }
@@ -835,6 +838,7 @@ a {
 }
 
 .video-content .video-details .video-title h2 {
+  color: var(--text-clr);
   font-size: 1.8rem;
   font-weight: 500;
 }
