@@ -46,6 +46,7 @@ const ChannelContent = ({ channel }) => {
         <div className="channel-description">
           <p>{channelDescription}</p>
         </div>
+        <button className="subscribe-btn">Subscribe</button>
       </div>
       <button className="subscribe-btn">Subscribe</button>
     </div>

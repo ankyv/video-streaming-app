@@ -25,7 +25,7 @@ const ResultPage = () => {
   if (!resultData) return null;
 
   return (
-    <div>
+    <div className="result-page">
       {resultData.map((item) => {
         if (item?.id?.kind === "youtube#channel") {
           return <ChannelContent key={item?.etag} channel={item} />;

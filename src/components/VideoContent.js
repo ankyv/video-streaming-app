@@ -45,13 +45,22 @@ const VideoContent = ({ video }) => {
         </div>
       </div>
       <div className="video-details">
-        <div className="video-title">
-          <h2>{videoTitle}</h2>
-        </div>
-        <div className="video-stats">
-          <p className="video-viewcount">{viewCount} views</p>
-          <p className="interpunct">•</p>
-          <p className="video-publish-time">{publishedAt}</p>
+        <div className="video-data">
+          <div className="video-channel-image">
+            <div className="channel-image"></div>
+          </div>
+          <div className="video-info">
+            <div className="video-title">
+              <h2>{videoTitle}</h2>
+            </div>
+            <div className="video-stats">
+              <p className="video-channel-name">{channelTitle}</p>
+              <p className="interpunct">•</p>
+              <p className="video-viewcount">{viewCount} views</p>
+              <p className="interpunct">•</p>
+              <p className="video-publish-time">{publishedAt}</p>
+            </div>
+          </div>
         </div>
         <div className="video-channel">
           <div className="channel-image">
