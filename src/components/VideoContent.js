@@ -8,10 +8,11 @@ import {
 
 const VideoContent = ({ video }) => {
   const [videoData, setVideoData] = useState(null);
+  const [channelData, setChannelData] = useState(null);
 
-  // const channelId = video?.snippet?.channelId;
+  const channelId = video?.snippet?.channelId;
   const channelTitle = video?.snippet?.channelTitle;
-  // const channelThumbnailSrc = "";
+  const channelThumbnailSrc = getThumbnailSrc(channelData?.snippet?.thumbnails);
 
   const videoId = video?.id?.videoId;
   const videoThumbnailSrc = getThumbnailSrc(video?.snippet?.thumbnails);
@@ -24,6 +25,7 @@ const VideoContent = ({ video }) => {
 
   useEffect(() => {
     getVideoData();
+    getChannelData();
   }, []);
 
   async function getVideoData() {
@@ -32,6 +34,14 @@ const VideoContent = ({ video }) => {
     );
     const json = await response.json();
     setVideoData(json?.items[0]);
+  }
+
+  async function getChannelData() {
+    const response = await fetch(
+      `https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=${channelId}&key=${process.env.API_KEY}`
+    );
+    const json = await response.json();
+    setChannelData(json?.items[0]);
   }
 
   return (
@@ -47,7 +57,9 @@ const VideoContent = ({ video }) => {
       <div className="video-details">
         <div className="video-data">
           <div className="video-channel-image">
-            <div className="channel-image"></div>
+            <div className="channel-image">
+              <img src={channelThumbnailSrc} />
+            </div>
           </div>
           <div className="video-info">
             <div className="video-title">
@@ -64,7 +76,7 @@ const VideoContent = ({ video }) => {
         </div>
         <div className="video-channel">
           <div className="channel-image">
-            {/* <img src={channelThumbnailSrc} /> */}
+            <img src={channelThumbnailSrc} />
           </div>
           <div className="channel-name">
             <p>{channelTitle}</p>
