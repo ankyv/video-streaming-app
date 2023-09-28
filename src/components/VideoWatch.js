@@ -68,14 +68,16 @@ const VideoWatch = () => {
         <h1 className="video-title">{videoTitle}</h1>
         <div className="video-info">
           <div className="channel-section">
-            <div className="channel-image">
-              <img src={channelThumbnailSrc} />
-            </div>
             <div className="channel-info">
-              <h2 className="channel-title">{channelTitle}</h2>
-              <p className="channel-subscribers-count">
-                {subscriberCount} subscribers
-              </p>
+              <div className="channel-image">
+                <img src={channelThumbnailSrc} />
+              </div>
+              <div className="channel-data">
+                <h2 className="channel-title">{channelTitle}</h2>
+                <p className="channel-subscribers-count">
+                  {subscriberCount} subscribers
+                </p>
+              </div>
             </div>
             <button className="subscribe-btn">Subscribe</button>
           </div>
@@ -111,7 +113,7 @@ const VideoWatch = () => {
         </div>
         <div className="video-comments"></div>
       </div>
-      <div className="suggested-video-section"></div>
+      {/* <div className="suggested-video-section"></div> */}
     </div>
   );
 };
