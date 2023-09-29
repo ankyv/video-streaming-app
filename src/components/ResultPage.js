@@ -34,7 +34,7 @@ const ResultPage = () => {
       <InfiniteScroll
         dataLength={resultData.length}
         next={getSearchResult}
-        hasMore={pageToken && resultData.length < 400}
+        hasMore={pageToken && resultData.length < 300}
         loader={<h4>Loading..</h4>}
         className="result-page"
       >
