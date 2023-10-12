@@ -1,14 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-// import Header from "./components/Header";
-// import Body from "./components/Body";
 import { Provider } from "react-redux";
 import store from "./utils/store";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-// import WatchSection from "./components/WatchSection";
-// import Main from "./components/Main";
-// import VideoSection from "./components/VideoSection";
-// import ResultSection from "./components/ResultSection";
 import {
   Header,
   Body,
