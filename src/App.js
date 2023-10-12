@@ -5,10 +5,10 @@ import Body from "./components/Body";
 import { Provider } from "react-redux";
 import store from "./utils/store";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import VideoWatch from "./components/VideoWatch";
+import WatchSection from "./components/WatchSection";
 import Main from "./components/Main";
 import VideoSection from "./components/VideoSection";
-import ResultPage from "./components/ResultPage";
+import ResultSection from "./components/ResultSection";
 
 const App = () => {
   return (
@@ -38,7 +38,7 @@ const appRouter = createBrowserRouter([
               },
               {
                 path: "/results/:searchQuery",
-                element: <ResultPage />,
+                element: <ResultSection />,
               },
             ],
           },
@@ -46,7 +46,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/watch/:id",
-        element: <VideoWatch />,
+        element: <WatchSection />,
       },
     ],
   },

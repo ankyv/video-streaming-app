@@ -5,7 +5,7 @@ import PlaylistContent from "./PlaylistContent";
 import VideoContent from "./VideoContent";
 import InfiniteScroll from "react-infinite-scroll-component";
 
-const ResultPage = () => {
+const ResultSection = () => {
   let { searchQuery } = useParams();
   searchQuery = searchQuery.replace(" ", "%20");
 
@@ -58,4 +58,4 @@ const ResultPage = () => {
   );
 };
 
-export default ResultPage;
+export default ResultSection;

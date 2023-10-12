@@ -9,7 +9,7 @@ import {
 } from "../icons";
 import { getCount, getPublishTime, getThumbnailSrc } from "../utils/helper";
 
-const VideoWatch = () => {
+const WatchSection = () => {
   const { id } = useParams();
 
   const [video, setVideo] = useState(null);
@@ -118,4 +118,4 @@ const VideoWatch = () => {
   );
 };
 
-export default VideoWatch;
+export default WatchSection;
