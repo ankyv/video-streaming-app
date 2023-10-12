@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import ChannelContent from "./ChannelContent";
-import PlaylistContent from "./PlaylistContent";
-import VideoContent from "./VideoContent";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { ChannelContent, PlaylistContent, VideoContent } from "./index";
 
 const ResultSection = () => {
   let { searchQuery } = useParams();

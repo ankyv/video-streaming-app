@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { API_DATA_URL } from "../constants";
 import "dotenv/config";
-import VideoCard from "./VideoCard";
 import { Link } from "react-router-dom";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { VideoCard } from "./index";
 
 const VideoSection = () => {
   const [videoList, setVideoList] = useState([]);

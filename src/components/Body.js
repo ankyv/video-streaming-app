@@ -1,7 +1,6 @@
-import SidebarSmall from "./SidebarSmall";
-import SidebarLarge from "./SidebarLarge";
 import { useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
+import { SidebarSmall, SidebarLarge } from "./index";
 
 const Body = () => {
   const isVisible = useSelector((store) => store.sidebar.isVisible);

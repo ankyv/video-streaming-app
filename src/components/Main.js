@@ -1,6 +1,5 @@
 import { Outlet } from "react-router-dom";
-import RecentLinks from "./RecentLinks";
-import SearchContainer from "./SearchContainer";
+import { RecentLinks, SearchContainer } from "./index";
 
 const Main = () => {
   return (

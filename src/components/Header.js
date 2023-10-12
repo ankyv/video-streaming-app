@@ -13,7 +13,7 @@ import { toggleSidebar } from "../utils/sidebarSlice";
 import { toggleTheme } from "../utils/themeSlice";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
-import SearchContainer from "./SearchContainer";
+import { SearchContainer } from "./index";
 
 const Header = () => {
   const dispatch = useDispatch();
