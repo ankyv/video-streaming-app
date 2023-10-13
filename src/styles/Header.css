@@ -1,0 +1,169 @@
+.header {
+  background-color: var(--bg-clr);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0.4rem 1.6rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  min-width: 180px;
+}
+
+.menu-icon {
+  border-radius: 10rem;
+  padding: 0.6rem 1rem;
+  margin-right: 1.5rem;
+  cursor: pointer;
+}
+
+.menu-icon svg {
+  margin-top: 0.4rem;
+}
+
+.menu-icon:hover {
+  background-color: var(--btn-bg-hover);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logo-container h1 {
+  color: var(--text-clr);
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: -1px;
+  user-select: none;
+}
+
+.header-mid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 2;
+}
+
+.mic-icon {
+  background-color: var(--btn-bg);
+  border-radius: 10rem;
+  padding: 0.6rem 1rem;
+  margin-right: 1.5rem;
+  cursor: pointer;
+}
+
+.mic-icon svg {
+  margin-top: 0.4rem;
+}
+
+.mic-icon:hover {
+  background-color: var(--btn-bg-hover);
+}
+
+.header-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.header-right div {
+  border-radius: 10rem;
+  cursor: pointer;
+  padding: 1rem 1.2rem;
+  margin-right: 1.5rem;
+}
+
+.header-right div:last-child {
+  padding: 0.6rem 0.8rem;
+}
+
+.header-right div:hover {
+  background-color: var(--btn-bg-hover);
+}
+
+@media (max-width: 1050px) {
+  .header-right div {
+    margin-right: 1rem;
+  }
+}
+
+@media (max-width: 950px) {
+  .header-right div {
+    margin-right: 0.8rem;
+  }
+  .header-right div svg {
+    width: 22px;
+  }
+  .header-right div {
+    padding: 1rem 1.4rem;
+  }
+  .header-right div:last-child {
+    padding: 0.6rem 1.2rem;
+  }
+  .header-right div:last-child svg {
+    width: 26px;
+  }
+}
+
+@media (max-width: 880px) {
+  .mic-icon {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .header-mid {
+    display: none;
+  }
+  .header-right div {
+    margin-right: 1.4rem;
+  }
+}
+
+@media (max-width: 750px) {
+  .menu-icon {
+    margin-right: 0.8rem;
+  }
+}
+
+@media (max-width: 440px) {
+  .header {
+    padding: 0;
+  }
+  .header-left {
+    min-width: 0px;
+    flex-grow: 1;
+  }
+  .menu-icon {
+    margin: 0 0.4rem;
+  }
+  .header-right {
+    flex-grow: 1;
+  }
+  .header-right div {
+    display: none;
+    margin-right: 0.6rem;
+  }
+  .header-right div:first-child {
+    display: block;
+  }
+  .header-right div:last-child {
+    display: block;
+  }
+}
+
+@media (max-width: 320px) {
+  .header-right div {
+    padding: 0.8rem 1.2rem;
+  }
+}

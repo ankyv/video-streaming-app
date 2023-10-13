@@ -5,6 +5,7 @@ import {
   getThumbnailSrc,
   getCount,
 } from "../utils/helper";
+import "../styles/VideoCard.css";
 
 const VideoCard = ({ video }) => {
   const [channel, setChannel] = useState(null);

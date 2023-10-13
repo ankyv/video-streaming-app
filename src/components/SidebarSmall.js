@@ -1,4 +1,5 @@
 import { HomeIcon, LibraryIcon, ShortsIcon, SubscriptionsIcon } from "../icons";
+import "../styles/SidebarSmall.css";
 
 const SidebarSmall = () => {
   return (

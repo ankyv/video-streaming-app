@@ -1,0 +1,36 @@
+.recent-links {
+  background-color: var(--bg-clr);
+  height: 60px;
+  overflow: hidden;
+  position: sticky;
+  top: 60px;
+  z-index: 1;
+}
+
+.recent-link {
+  background-color: var(--btn-bg);
+  border-radius: 0.8rem;
+  display: inline-block;
+  padding: 0.8rem 1rem;
+  margin: 1.2rem 1.2rem 1.2rem 0;
+  cursor: pointer;
+  user-select: none;
+}
+
+.recent-link:hover {
+  background-color: var(--btn-bg-hover);
+}
+
+.recent-link > p {
+  color: var(--text-clr);
+  font-size: 1.4rem;
+}
+
+@media (max-width: 800px) {
+  .recent-links {
+    top: 114px;
+  }
+  .recent-links .recent-link:first-child {
+    margin-left: 1rem;
+  }
+}

@@ -1,0 +1,125 @@
+.channel-content {
+  border-bottom: 1px solid var(--border-clr);
+  display: flex;
+  align-items: center;
+  padding: 1rem 0 2.6rem;
+  margin-bottom: 2.4rem;
+  cursor: pointer;
+}
+
+.channel-content .channel-content-image {
+  width: 300px;
+  margin-right: 1rem;
+}
+
+.channel-content .channel-image {
+  border-radius: 10rem;
+  height: 136px;
+  width: 136px;
+  margin: auto;
+}
+
+.channel-content .channel-image img {
+  border-radius: inherit;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.channel-content .channel-data {
+  flex-grow: 1;
+  padding: 0 2rem 2rem 0;
+}
+
+.channel-content .channel-data .subscribe-btn {
+  display: none;
+}
+
+.channel-content .channel-data .channel-title {
+  margin-bottom: 0.6rem;
+}
+
+.channel-content .channel-data .channel-title h2 {
+  color: var(--text-clr);
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.channel-content .channel-data .channel-info {
+  color: var(--text-light);
+  display: flex;
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.channel-content .channel-data .channel-info .interpunct {
+  font-weight: 600;
+  margin: 0 0.4rem;
+}
+
+.channel-content .channel-data .channel-description {
+  color: var(--text-light);
+  font-size: 1.2rem;
+}
+
+.channel-content .subscribe-btn {
+  background-color: var(--text-clr);
+  border: none;
+  border-radius: 10rem;
+  color: var(--bg-clr);
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 1rem 1.6rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.channel-content .subscribe-btn:hover {
+  background-color: var(--subscribe-btn-hover);
+}
+
+@media (max-width: 950px) {
+  .channel-content .channel-data .channel-description {
+    display: none;
+  }
+  .channel-content .subscribe-btn {
+    display: none;
+  }
+  .channel-content .channel-data .subscribe-btn {
+    display: block;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 750px) {
+  .channel-content .channel-data .channel-info {
+    flex-direction: column;
+  }
+  .channel-content .channel-data .channel-info .interpunct {
+    display: none;
+  }
+  .channel-content .channel-content-image {
+    width: 160px;
+  }
+  .channel-content .channel-image {
+    height: 100px;
+    width: 100px;
+  }
+}
+
+@media (max-width: 500px) {
+  .channel-content .channel-content-image {
+    width: unset;
+  }
+}
+
+@media (max-width: 400px) {
+  .channel-content .channel-content-image {
+    margin-left: 2rem;
+  }
+  .channel-content .channel-content-image .channel-image {
+    width: 80px;
+    height: 80px;
+  }
+}

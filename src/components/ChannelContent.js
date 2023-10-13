@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getCount, getThumbnailSrc } from "../utils/helper";
+import "../styles/ChannelContent.css";
 
 const ChannelContent = ({ channel }) => {
   const [channelData, setChannelData] = useState(null);

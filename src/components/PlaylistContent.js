@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getThumbnailSrc } from "../utils/helper";
+import "../styles/PlaylistContent.css";
 
 const PlaylistContent = ({ playlist }) => {
   const [channelData, setChannelData] = useState(null);

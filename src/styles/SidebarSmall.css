@@ -1,0 +1,33 @@
+.sidebar-small {
+  background-color: var(--bg-clr);
+  display: inline-block;
+  padding-left: 0.4rem;
+  user-select: none;
+  position: sticky;
+  top: 60px;
+}
+
+.sidebar-small > div {
+  border-radius: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.9rem 0.3rem;
+  cursor: pointer;
+}
+
+.sidebar-small > div:hover {
+  background-color: var(--btn-bg);
+}
+
+.sidebar-small > div > p {
+  color: var(--text-clr);
+  margin-top: 0.8rem;
+}
+
+@media (max-width: 500px) {
+  .sidebar-small {
+    display: none;
+  }
+}

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { SearchIcon } from "../icons";
 import { Link } from "react-router-dom";
+import "../styles/SearchContainer.css";
 
 const SearchContainer = () => {
   const [searchQuery, setSearchQuery] = useState("");

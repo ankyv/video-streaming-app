@@ -1,0 +1,105 @@
+.search-container {
+  border: 1px solid var(--border-clr);
+  border-radius: 10rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 1.4rem;
+  max-width: 600px;
+  width: 100%;
+  user-select: none;
+  position: relative;
+}
+
+.search-container input {
+  background-color: var(--bg-clr);
+  border: none;
+  border-radius: inherit;
+  color: var(--text-clr);
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+  outline: none;
+  padding: 0.6rem 2rem;
+  width: 100%;
+}
+
+.search-container button {
+  background-color: var(--btn-bg);
+  border: none;
+  border-left: 1px solid var(--border-clr);
+  border-radius: 0 10rem 10rem 0;
+  cursor: pointer;
+  outline: none;
+  padding: 0.6rem 2.2rem;
+}
+
+.search-container .search-results {
+  background-color: var(--search-bg-clr);
+  border-radius: 1.2rem;
+  box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.22);
+  color: var(--text-clr);
+  width: 90%;
+  padding: 1.5rem 0;
+  position: absolute;
+  top: 40px;
+  z-index: 100;
+}
+
+.search-container .search-results .search-result {
+  display: flex;
+  font-size: 1.6rem;
+  list-style-type: none;
+  padding: 0.4rem 1.6rem;
+  cursor: pointer;
+}
+
+.search-container .search-results .search-result:hover {
+  background-color: var(--btn-bg-hover);
+}
+
+.search-container .search-results .search-result svg {
+  margin-top: 0.4rem;
+  margin-right: 1rem;
+}
+
+.search-container button:hover {
+  background-color: var(--btn-bg-hover);
+}
+
+@media (max-width: 880px) {
+  .search-container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 800px) {
+  .main .main-search-box {
+    background-color: var(--bg-clr);
+    position: sticky;
+    top: 60px;
+    z-index: 10;
+    padding: 1rem;
+  }
+  .main .search-container {
+    border-radius: 0.4rem;
+    display: flex;
+    width: 80%;
+  }
+  .main .search-container button {
+    border-radius: inherit;
+    background-color: transparent;
+    border-left: none;
+  }
+}
+
+@media (max-width: 750px) {
+  .search-container button {
+    padding-right: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .main .search-container {
+    width: 100%;
+  }
+}

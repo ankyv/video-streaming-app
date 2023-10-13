@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { ChannelContent, PlaylistContent, VideoContent } from "./index";
+import "../styles/ResultSection.css";
 
 const ResultSection = () => {
   let { searchQuery } = useParams();
@@ -28,13 +29,13 @@ const ResultSection = () => {
   if (!resultData.length) return null;
 
   return (
-    <div className="result-page">
+    <div className="result-section">
       <InfiniteScroll
         dataLength={resultData.length}
         next={getSearchResult}
         hasMore={pageToken && resultData.length < 300}
         loader={<h4>Loading..</h4>}
-        className="result-page"
+        className="result-section"
       >
         {resultData.map((item, index) => {
           if (item?.id?.kind === "youtube#channel") {

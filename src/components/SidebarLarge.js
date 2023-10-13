@@ -7,6 +7,7 @@ import {
   SubscriptionsIcon,
   WatchLaterIcon,
 } from "../icons";
+import "../styles/SidebarLarge.css";
 
 const SidebarLarge = () => {
   return (

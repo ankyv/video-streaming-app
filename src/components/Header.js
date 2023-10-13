@@ -14,6 +14,7 @@ import { toggleTheme } from "../utils/themeSlice";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { SearchContainer } from "./index";
+import "../styles/Header.css";
 
 const Header = () => {
   const dispatch = useDispatch();

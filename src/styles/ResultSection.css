@@ -1,0 +1,11 @@
+.result-section {
+  max-width: 1200px;
+  margin: auto;
+  padding-left: 0.2rem;
+}
+
+@media (max-width: 400px) {
+  .result-section {
+    padding-left: 0;
+  }
+}

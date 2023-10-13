@@ -5,6 +5,7 @@ import {
   getPublishTime,
   getThumbnailSrc,
 } from "../utils/helper";
+import "../styles/VideoContent.css";
 
 const VideoContent = ({ video }) => {
   const [videoData, setVideoData] = useState(null);

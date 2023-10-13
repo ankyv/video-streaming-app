@@ -8,6 +8,7 @@ import {
   ShareIcon,
 } from "../icons";
 import { getCount, getPublishTime, getThumbnailSrc } from "../utils/helper";
+import "../styles/WatchSection.css";
 
 const WatchSection = () => {
   const { id } = useParams();
@@ -55,7 +56,7 @@ const WatchSection = () => {
   if (!video) return null;
 
   return (
-    <div className="video-watch">
+    <div className="watch-section">
       <div className="video-section">
         <div className="video-stream">
           <iframe

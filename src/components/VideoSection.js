@@ -4,6 +4,7 @@ import "dotenv/config";
 import { Link } from "react-router-dom";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { VideoCard } from "./index";
+import "../styles/VideoSection.css";
 
 const VideoSection = () => {
   const [videoList, setVideoList] = useState([]);

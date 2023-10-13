@@ -1,3 +1,5 @@
+import "../styles/RecentLinks.css";
+
 const RecentLinks = () => {
   const links = [
     "All",
