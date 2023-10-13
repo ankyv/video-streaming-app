@@ -1,5 +1,5 @@
 {
-  "name": "youtube-clone-app",
+  "name": "video-streaming-app",
   "version": "1.0.0",
   "description": "This repository is about building a React Project",
   "scripts": {
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/iankitvarshney/youtube-clone-app.git"
+    "url": "git+ssh://git@github.com/iankitvarshney/video-streaming-app.git"
   },
   "author": "Ankit Varshney",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/iankitvarshney/youtube-clone-app/issues"
+    "url": "https://github.com/iankitvarshney/video-streaming-app/issues"
   },
-  "homepage": "https://github.com/iankitvarshney/youtube-clone-app#readme",
+  "homepage": "https://github.com/iankitvarshney/video-streaming-app#readme",
   "devDependencies": {
     "buffer": "^6.0.3",
     "crypto-browserify": "^3.12.0",
