@@ -17,6 +17,7 @@ const WatchSection = () => {
   const [video, setVideo] = useState(null);
   const [channel, setChannel] = useState(null);
   const [comments, setComments] = useState(null);
+  const [showDescription, setShowDescription] = useState(false);
 
   const channelId = video?.snippet?.channelId;
   const channelThumbnailSrc = getThumbnailSrc(channel?.snippet?.thumbnails);
@@ -72,7 +73,7 @@ const WatchSection = () => {
       <div className="video-section">
         <div className="video-stream">
           <iframe
-            src={`https://www.youtube.com/embed/${id}?autoplay=1&mute=1&modestbranding=1`}
+            src={`https://www.youtube.com/embed/${id}?autoplay=1&mute=0&modestbranding=1`}
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
@@ -117,12 +118,27 @@ const WatchSection = () => {
             </div>
           </div>
         </div>
-        <div className="video-description">
+        <div
+          className="video-description"
+          style={{
+            height: showDescription && "unset",
+            overflow: showDescription && "auto",
+          }}
+        >
           <div className="video-stats">
             <p className="video-viewcount">{viewCount} views</p>
             <p className="video-publish-time">{publishTime}</p>
           </div>
           <pre className="video-description-text">{description}</pre>
+          <button
+            onClick={() => setShowDescription(!showDescription)}
+            className="more-btn"
+            style={{
+              position: showDescription ? "unset" : "absolute",
+            }}
+          >
+            {showDescription ? "Show less" : "...more"}
+          </button>
         </div>
         <div className="video-comments">
           {comments?.items?.map((comment) => (

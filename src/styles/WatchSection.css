@@ -159,7 +159,21 @@
   padding: 1.4rem;
   margin-bottom: 2rem;
   margin-inline: 1rem;
-  overflow: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.watch-section .video-section .video-description .more-btn {
+  background-color: var(--btn-bg);
+  border: none;
+  color: var(--text-clr);
+  cursor: pointer;
+  font-weight: 500;
+  margin-top: 1rem;
+  padding: 0.6rem 1rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 .watch-section .video-section .video-description .video-stats {
