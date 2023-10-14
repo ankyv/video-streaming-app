@@ -8,6 +8,7 @@ import {
   ShareIcon,
 } from "../icons";
 import { getCount, getPublishTime, getThumbnailSrc } from "../utils/helper";
+import { CommentContent } from "./index";
 import "../styles/WatchSection.css";
 
 const WatchSection = () => {
@@ -15,6 +16,7 @@ const WatchSection = () => {
 
   const [video, setVideo] = useState(null);
   const [channel, setChannel] = useState(null);
+  const [comments, setComments] = useState(null);
 
   const channelId = video?.snippet?.channelId;
   const channelThumbnailSrc = getThumbnailSrc(channel?.snippet?.thumbnails);
@@ -29,6 +31,7 @@ const WatchSection = () => {
 
   useEffect(() => {
     getVideoDetails();
+    getComments();
   }, []);
 
   useEffect(() => {
@@ -51,6 +54,15 @@ const WatchSection = () => {
     );
     const json = await response.json();
     setChannel(json?.items[0]);
+  }
+
+  async function getComments() {
+    const response = await fetch(
+      `https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&maxResults=25&key=${process.env.API_KEY}&videoId=${id}`
+    );
+    const json = await response.json();
+    console.log(json);
+    setComments(json);
   }
 
   if (!video) return null;
@@ -112,7 +124,11 @@ const WatchSection = () => {
           </div>
           <pre className="video-description-text">{description}</pre>
         </div>
-        <div className="video-comments"></div>
+        <div className="video-comments">
+          {comments?.items?.map((comment) => (
+            <CommentContent key={comment?.id} comment={comment} />
+          ))}
+        </div>
       </div>
       {/* <div className="suggested-video-section"></div> */}
     </div>

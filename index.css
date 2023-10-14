@@ -16,6 +16,7 @@
   --subscribe-btn-hover: #282828ec;
   --search-bg-clr: #fff;
   --playlist-bg-clr: #595959cc;
+  --comment-text-clr: #065fd4;
 }
 
 .dark {
@@ -28,6 +29,7 @@
   --subscribe-btn-hover: #d9d9d9;
   --search-bg-clr: rgb(42, 42, 42);
   --playlist-bg-clr: #595959cc;
+  --comment-text-clr: #3ea6ff;
 }
 
 html {

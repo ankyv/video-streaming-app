@@ -1,5 +1,6 @@
 import Body from "./Body";
 import ChannelContent from "./ChannelContent";
+import CommentContent from "./CommentContent";
 import Header from "./Header";
 import Main from "./Main";
 import PlaylistContent from "./PlaylistContent";
@@ -16,6 +17,7 @@ import WatchSection from "./WatchSection";
 export {
   Body,
   ChannelContent,
+  CommentContent,
   Header,
   Main,
   PlaylistContent,

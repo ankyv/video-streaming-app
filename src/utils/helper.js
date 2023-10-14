@@ -104,6 +104,7 @@ export const getPublishTime = (publishTime) => {
   const minuteMilliseconds = 60 * secondMilliseconds;
   const hourMilliseconds = 60 * minuteMilliseconds;
   const dayMilliseconds = 24 * hourMilliseconds;
+  const weekMilliseconds = 7 * dayMilliseconds;
   const monthMilliseconds = 30 * dayMilliseconds;
   const yearMilliseconds = 365 * dayMilliseconds;
 
@@ -116,6 +117,11 @@ export const getPublishTime = (publishTime) => {
     const months = Math.floor(milliseconds / monthMilliseconds);
     publishTimeString = publishTimeString.concat(
       months + (months === 1 ? " month " : " months ") + "ago"
+    );
+  } else if (Math.floor(milliseconds / weekMilliseconds)) {
+    const weeks = Math.floor(milliseconds / weekMilliseconds);
+    publishTimeString = publishTimeString.concat(
+      weeks + (weeks === 1 ? " week " : " weeks ") + "ago"
     );
   } else if (Math.floor(milliseconds / dayMilliseconds)) {
     const days = Math.floor(milliseconds / dayMilliseconds);
