@@ -8,7 +8,7 @@ import {
   ShareIcon,
 } from "../icons";
 import { getCount, getPublishTime, getThumbnailSrc } from "../utils/helper";
-import { CommentContent } from "./index";
+import { CommentContent, SuggestedVideoSection } from "./index";
 import "../styles/WatchSection.css";
 
 const WatchSection = () => {
@@ -130,7 +130,7 @@ const WatchSection = () => {
           ))}
         </div>
       </div>
-      {/* <div className="suggested-video-section"></div> */}
+      <SuggestedVideoSection />
     </div>
   );
 };

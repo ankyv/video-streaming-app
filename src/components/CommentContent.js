@@ -1,7 +1,7 @@
 import { DislikeIcon, LikeIcon } from "../icons";
 import { getCount, getPublishTime } from "../utils/helper";
 import { useState } from "react";
-import CommentReplies from "./CommentReplies";
+import { CommentReplies } from "./index";
 import "../styles/CommentContent.css";
 
 const CommentContent = ({ comment }) => {

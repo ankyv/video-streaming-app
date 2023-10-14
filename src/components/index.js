@@ -1,6 +1,7 @@
 import Body from "./Body";
 import ChannelContent from "./ChannelContent";
 import CommentContent from "./CommentContent";
+import CommentReplies from "./CommentReplies";
 import Header from "./Header";
 import Main from "./Main";
 import PlaylistContent from "./PlaylistContent";
@@ -9,6 +10,7 @@ import ResultSection from "./ResultSection";
 import SearchContainer from "./SearchContainer";
 import SidebarLarge from "./SidebarLarge";
 import SidebarSmall from "./SidebarSmall";
+import SuggestedVideoSection from "./SuggestedVideoSection";
 import VideoCard from "./VideoCard";
 import VideoContent from "./VideoContent";
 import VideoSection from "./VideoSection";
@@ -18,6 +20,7 @@ export {
   Body,
   ChannelContent,
   CommentContent,
+  CommentReplies,
   Header,
   Main,
   PlaylistContent,
@@ -26,6 +29,7 @@ export {
   SearchContainer,
   SidebarLarge,
   SidebarSmall,
+  SuggestedVideoSection,
   VideoCard,
   VideoContent,
   VideoSection,
