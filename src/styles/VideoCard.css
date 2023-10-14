@@ -1,5 +1,6 @@
 .video-card {
   border-radius: inherit;
+  user-select: none;
 }
 
 .video-card-thumbnail {

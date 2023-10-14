@@ -14,6 +14,7 @@ import { toggleTheme } from "../utils/themeSlice";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { SearchContainer } from "./index";
+import { Link } from "react-router-dom";
 import "../styles/Header.css";
 
 const Header = () => {
@@ -36,10 +37,12 @@ const Header = () => {
         >
           <MenuIcon color={"var(--text-clr)"} />
         </div>
-        <div className="logo-container">
-          <LogoIcon color={"var(--text-clr)"} />
-          <h1>Project</h1>
-        </div>
+        <Link to="/">
+          <div className="logo-container">
+            <LogoIcon color={"var(--text-clr)"} />
+            <h1>Project</h1>
+          </div>
+        </Link>
       </div>
       <div className="header-mid">
         <SearchContainer />

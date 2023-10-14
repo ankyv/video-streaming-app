@@ -13,7 +13,7 @@ const SidebarLarge = () => {
   return (
     <div className="sidebar-large">
       <div className="sidebar-section">
-        <div>
+        <div className="active">
           <HomeIcon color={"var(--text-clr)"} />
           <p>Home</p>
         </div>

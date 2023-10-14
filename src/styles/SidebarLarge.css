@@ -20,6 +20,10 @@
   cursor: pointer;
 }
 
+.sidebar-large .sidebar-section > div.active {
+  background-color: var(--btn-bg);
+}
+
 .sidebar-large .sidebar-section > div:hover {
   background-color: var(--btn-bg);
 }
