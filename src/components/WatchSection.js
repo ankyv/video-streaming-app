@@ -2,8 +2,10 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import {
   DislikeIcon,
+  DislikeIconFill,
   DownloadIcon,
   LikeIcon,
+  LikeIconFill,
   MoreIcon,
   ShareIcon,
 } from "../icons";
@@ -18,6 +20,9 @@ const WatchSection = () => {
   const [channel, setChannel] = useState(null);
   const [comments, setComments] = useState(null);
   const [showDescription, setShowDescription] = useState(false);
+  const [isLike, setIsLike] = useState(false);
+  const [isDislike, setIsDislike] = useState(false);
+  const [likeCount, setLikeCount] = useState(null);
 
   const channelId = video?.snippet?.channelId;
   const channelThumbnailSrc = getThumbnailSrc(channel?.snippet?.thumbnails);
@@ -25,10 +30,15 @@ const WatchSection = () => {
 
   const videoTitle = video?.snippet?.title;
   const channelTitle = video?.snippet?.channelTitle;
-  const likeCount = getCount(video?.statistics?.likeCount);
+  const likeCountString = getCount(likeCount);
   const viewCount = getCount(video?.statistics?.viewCount);
   const publishTime = getPublishTime(video?.snippet?.publishedAt);
   const description = video?.snippet?.description;
+
+  // As soon as we get video data, we will update likeCount state variable.
+  useEffect(() => {
+    setLikeCount(parseInt(video?.statistics?.likeCount));
+  }, [video]);
 
   useEffect(() => {
     getVideoDetails();
@@ -62,7 +72,6 @@ const WatchSection = () => {
       `https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&maxResults=25&key=${process.env.API_KEY}&videoId=${id}`
     );
     const json = await response.json();
-    console.log(json);
     setComments(json);
   }
 
@@ -97,12 +106,40 @@ const WatchSection = () => {
           </div>
           <div className="video-options">
             <div>
-              <div className="like-btn option-btn">
-                <LikeIcon color={"var(--text-clr)"} size={22} />
-                <p>{likeCount}</p>
+              <div
+                onClick={() => {
+                  setIsLike(!isLike);
+                  {
+                    isLike
+                      ? setLikeCount(likeCount - 1)
+                      : setLikeCount(likeCount + 1);
+                    isDislike && setIsDislike(false);
+                  }
+                }}
+                className="like-btn option-btn"
+              >
+                {isLike ? (
+                  <LikeIconFill color={"var(--text-clr)"} size={22} />
+                ) : (
+                  <LikeIcon color={"var(--text-clr)"} size={22} />
+                )}
+                <p>{likeCountString}</p>
               </div>
-              <div className="dislike-btn option-btn">
-                <DislikeIcon color={"var(--text-clr)"} />
+              <div
+                onClick={() => {
+                  setIsDislike(!isDislike);
+                  {
+                    isLike && setIsLike(false);
+                    isLike && setLikeCount(likeCount - 1);
+                  }
+                }}
+                className="dislike-btn option-btn"
+              >
+                {isDislike ? (
+                  <DislikeIconFill color={"var(--text-clr)"} size={22} />
+                ) : (
+                  <DislikeIcon color={"var(--text-clr)"} size={22} />
+                )}
               </div>
             </div>
             <div className="share-btn option-btn">

@@ -1,4 +1,4 @@
-import { DislikeIcon, LikeIcon } from "../icons";
+import { DislikeIcon, DislikeIconFill, LikeIcon, LikeIconFill } from "../icons";
 import { getCount, getPublishTime } from "../utils/helper";
 import { useState } from "react";
 import { CommentReplies } from "./index";
@@ -6,6 +6,13 @@ import "../styles/CommentContent.css";
 
 const CommentContent = ({ comment }) => {
   const [showReplies, setShowReplies] = useState(false);
+  const [isLike, setIsLike] = useState(false);
+  const [isDislike, setIsDislike] = useState(false);
+  const [likeCount, setLikeCount] = useState(
+    comment?.snippet?.likeCount
+      ? parseInt(comment?.snippet?.likeCount)
+      : parseInt(comment?.snippet?.topLevelComment?.snippet?.likeCount)
+  );
 
   // const channelId = comment?.snippet?.topLevelComment?.snippet?.authorChannelId?.value;
   const authorDisplayName = comment?.snippet?.authorDisplayName
@@ -16,9 +23,7 @@ const CommentContent = ({ comment }) => {
     ? comment?.snippet?.authorProfileImageUrl
     : comment?.snippet?.topLevelComment?.snippet?.authorProfileImageUrl;
 
-  const likeCount = comment?.snippet?.likeCount
-    ? getCount(comment?.snippet?.likeCount)
-    : getCount(comment?.snippet?.topLevelComment?.snippet?.likeCount);
+  const likeCountString = getCount(likeCount);
 
   const textOriginal = comment?.snippet?.textOriginal
     ? comment?.snippet?.textOriginal
@@ -46,12 +51,38 @@ const CommentContent = ({ comment }) => {
           <p>{textOriginal}</p>
         </div>
         <div className="comment-stats">
-          <button>
-            <LikeIcon color={"var(--text-clr)"} />
+          <button
+            onClick={() => {
+              setIsLike(!isLike);
+              {
+                isLike
+                  ? setLikeCount(likeCount - 1)
+                  : setLikeCount(likeCount + 1);
+                isDislike && setIsDislike(false);
+              }
+            }}
+          >
+            {isLike ? (
+              <LikeIconFill color={"var(--text-clr)"} size={22} />
+            ) : (
+              <LikeIcon color={"var(--text-clr)"} size={22} />
+            )}
           </button>
-          <p>{likeCount}</p>
-          <button>
-            <DislikeIcon color={"var(--text-clr)"} />
+          <p>{likeCountString}</p>
+          <button
+            onClick={() => {
+              setIsDislike(!isDislike);
+              {
+                isLike && setIsLike(false);
+                isLike && setLikeCount(likeCount - 1);
+              }
+            }}
+          >
+            {isDislike ? (
+              <DislikeIconFill color={"var(--text-clr)"} size={22} />
+            ) : (
+              <DislikeIcon color={"var(--text-clr)"} size={22} />
+            )}
           </button>
           <button className="reply-btn">Reply</button>
         </div>
