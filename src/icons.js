@@ -305,3 +305,31 @@ export const DislikeIconFill = ({ color, size }) => {
     </svg>
   );
 };
+
+export const ShareIconFill = ({ color, size }) => {
+  return (
+    <svg
+      fill={color}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      width={size ? size : "22"}
+      height={size ? size : "22"}
+    >
+      <path d="M13 14H11C7.54202 14 4.53953 15.9502 3.03239 18.8107C3.01093 18.5433 3 18.2729 3 18C3 12.4772 7.47715 8 13 8V3L23 11L13 19V14Z"></path>
+    </svg>
+  );
+};
+
+export const DownloadIconFill = ({ color, size }) => {
+  return (
+    <svg
+      fill={color}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      width={size ? size : "22"}
+      height={size ? size : "22"}
+    >
+      <path d="M3 19H21V21H3V19ZM13 9H20L12 17L4 9H11V1H13V9Z"></path>
+    </svg>
+  );
+};

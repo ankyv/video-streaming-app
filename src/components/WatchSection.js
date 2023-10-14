@@ -4,10 +4,12 @@ import {
   DislikeIcon,
   DislikeIconFill,
   DownloadIcon,
+  DownloadIconFill,
   LikeIcon,
   LikeIconFill,
   MoreIcon,
   ShareIcon,
+  ShareIconFill,
 } from "../icons";
 import { getCount, getPublishTime, getThumbnailSrc } from "../utils/helper";
 import { CommentContent, SuggestedVideoSection } from "./index";
@@ -22,6 +24,8 @@ const WatchSection = () => {
   const [showDescription, setShowDescription] = useState(false);
   const [isLike, setIsLike] = useState(false);
   const [isDislike, setIsDislike] = useState(false);
+  const [isShare, setIsShare] = useState(false);
+  const [isDownload, setIsDownload] = useState(false);
   const [likeCount, setLikeCount] = useState(null);
 
   const channelId = video?.snippet?.channelId;
@@ -142,12 +146,26 @@ const WatchSection = () => {
                 )}
               </div>
             </div>
-            <div className="share-btn option-btn">
-              <ShareIcon color={"var(--text-clr)"} />
+            <div
+              onClick={() => setIsShare(!isShare)}
+              className="share-btn option-btn"
+            >
+              {isShare ? (
+                <ShareIconFill color={"var(--text-clr)"} size={22} />
+              ) : (
+                <ShareIcon color={"var(--text-clr)"} size={22} />
+              )}
               <p>Share</p>
             </div>
-            <div className="download-btn option-btn">
-              <DownloadIcon color={"var(--text-clr)"} />
+            <div
+              onClick={() => setIsDownload(!isDownload)}
+              className="download-btn option-btn"
+            >
+              {isDownload ? (
+                <DownloadIconFill color={"var(--text-clr)"} size={22} />
+              ) : (
+                <DownloadIcon color={"var(--text-clr)"} size={22} />
+              )}
               <p>Download</p>
             </div>
             <div className="more-btn option-btn">
