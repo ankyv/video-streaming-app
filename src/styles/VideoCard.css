@@ -3,6 +3,10 @@
   user-select: none;
 }
 
+.video-card:hover .video-card-thumbnail .video-thumbnail {
+  border-radius: 0;
+}
+
 .video-card-thumbnail {
   position: relative;
   user-select: none;
@@ -11,6 +15,7 @@
 .video-card-thumbnail .video-thumbnail {
   border-radius: 1.2rem;
   height: 190px;
+  transition: all 0.2s ease-in-out;
 }
 
 .video-card-thumbnail .video-thumbnail img {
