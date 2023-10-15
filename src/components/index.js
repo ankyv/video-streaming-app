@@ -10,6 +10,7 @@ import ResultSection from "./ResultSection";
 import SearchContainer from "./SearchContainer";
 import SidebarLarge from "./SidebarLarge";
 import SidebarSmall from "./SidebarSmall";
+import SuggestedVideoCard from "./SuggestedVideoCard";
 import SuggestedVideoSection from "./SuggestedVideoSection";
 import VideoCard from "./VideoCard";
 import VideoContent from "./VideoContent";
@@ -29,6 +30,7 @@ export {
   SearchContainer,
   SidebarLarge,
   SidebarSmall,
+  SuggestedVideoCard,
   SuggestedVideoSection,
   VideoCard,
   VideoContent,

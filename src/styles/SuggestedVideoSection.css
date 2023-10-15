@@ -1,4 +1,37 @@
 .suggested-video-section {
   width: 30%;
   min-width: 280px;
+  padding-top: 1.4rem;
+}
+
+.suggested-video-section a {
+  border-radius: 1.2rem 0 0 1.2rem;
+  display: flex;
+  width: 100%;
+  margin-bottom: 1.2rem;
+}
+
+@media (max-width: 1020px) {
+  .suggested-video-section {
+    width: 90%;
+    padding: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .suggested-video-section {
+    width: 100%;
+  }
+}
+
+@media (max-width: 430px) {
+  .suggested-video-section a {
+    border-radius: 1.2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .suggested-video-section a {
+    border-radius: 0;
+  }
 }
