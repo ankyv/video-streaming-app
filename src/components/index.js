@@ -11,6 +11,7 @@ import ResultSection from "./ResultSection";
 import SearchContainer from "./SearchContainer";
 import SidebarLarge from "./SidebarLarge";
 import SidebarSmall from "./SidebarSmall";
+import SubscribeButton from "./SubscribeButton";
 import SuggestedVideoCard from "./SuggestedVideoCard";
 import SuggestedVideoSection from "./SuggestedVideoSection";
 import VideoCard from "./VideoCard";
@@ -32,6 +33,7 @@ export {
   SearchContainer,
   SidebarLarge,
   SidebarSmall,
+  SubscribeButton,
   SuggestedVideoCard,
   SuggestedVideoSection,
   VideoCard,

@@ -12,7 +12,11 @@ import {
   ShareIconFill,
 } from "../icons";
 import { getCount, getPublishTime, getThumbnailSrc } from "../utils/helper";
-import { CommentSection, SuggestedVideoSection } from "./index";
+import {
+  CommentSection,
+  SubscribeButton,
+  SuggestedVideoSection,
+} from "./index";
 import "../styles/WatchSection.css";
 
 const WatchSection = () => {
@@ -123,24 +127,14 @@ const WatchSection = () => {
                 </p>
               </div>
             </div>
-            <button
-              onClick={() => {
-                setIsSubscribed(!isSubscribed);
-                {
-                  isSubscribed
-                    ? setSubscriberCount(subscriberCount - 1)
-                    : setSubscriberCount(subscriberCount + 1);
-                }
-                document
-                  .querySelector(
-                    ".watch-section .video-section .video-info .channel-section .subscribe-btn"
-                  )
-                  .classList.toggle("subscribed");
+            <SubscribeButton
+              isSubscribed={isSubscribed}
+              setIsSubscribed={setIsSubscribed}
+              subscriberCount={subscriberCount}
+              setSubscriberCount={(value) => {
+                setSubscriberCount(value);
               }}
-              className="subscribe-btn"
-            >
-              {isSubscribed ? "Subscribed" : "Subscribe"}
-            </button>
+            />
           </div>
           <div className="video-options">
             <div>
