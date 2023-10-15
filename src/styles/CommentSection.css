@@ -1,0 +1,24 @@
+.comment-section {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+.comment-section > .comment-stats {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.comment-section > .comment-stats h2 {
+  font-size: 1.6rem;
+}
+.comment-section > .comment-stats p {
+  font-size: 1.4rem;
+  margin-left: 1rem;
+}
+
+@media (max-width: 600px) {
+  .comment-section {
+    background-color: var(--btn-bg);
+    border-radius: 1.2rem;
+  }
+}

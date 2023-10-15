@@ -2,6 +2,7 @@ import Body from "./Body";
 import ChannelContent from "./ChannelContent";
 import CommentContent from "./CommentContent";
 import CommentReplies from "./CommentReplies";
+import CommentSection from "./CommentSection";
 import Header from "./Header";
 import Main from "./Main";
 import PlaylistContent from "./PlaylistContent";
@@ -22,6 +23,7 @@ export {
   ChannelContent,
   CommentContent,
   CommentReplies,
+  CommentSection,
   Header,
   Main,
   PlaylistContent,

@@ -208,11 +208,6 @@
   white-space: pre-wrap;
 }
 
-.watch-section .video-section .video-comments {
-  width: 100%;
-  padding-inline: 1rem;
-}
-
 @media (max-width: 1400px) {
   .watch-section .video-section .video-info {
     flex-direction: column;
@@ -283,6 +278,7 @@
   .watch-section .video-section .video-description {
     width: 94vw;
     margin: auto;
+    margin-bottom: 2rem;
   }
 }
 

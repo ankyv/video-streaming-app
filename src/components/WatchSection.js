@@ -12,7 +12,7 @@ import {
   ShareIconFill,
 } from "../icons";
 import { getCount, getPublishTime, getThumbnailSrc } from "../utils/helper";
-import { CommentContent, SuggestedVideoSection } from "./index";
+import { CommentSection, SuggestedVideoSection } from "./index";
 import "../styles/WatchSection.css";
 
 const WatchSection = () => {
@@ -20,7 +20,6 @@ const WatchSection = () => {
 
   const [video, setVideo] = useState(null);
   const [channel, setChannel] = useState(null);
-  const [comments, setComments] = useState(null);
   const [showDescription, setShowDescription] = useState(false);
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [isLike, setIsLike] = useState(false);
@@ -40,6 +39,7 @@ const WatchSection = () => {
   const viewCount = getCount(video?.statistics?.viewCount);
   const publishTime = getPublishTime(video?.snippet?.publishedAt);
   const description = video?.snippet?.description;
+  const commentCount = video?.statistics?.commentCount;
 
   // As soon as we get video data, we will update likeCount state variable.
   useEffect(() => {
@@ -60,7 +60,6 @@ const WatchSection = () => {
   */
   useEffect(() => {
     getVideoDetails();
-    getComments();
   }, [id]);
 
   useEffect(() => {
@@ -83,14 +82,6 @@ const WatchSection = () => {
     );
     const json = await response.json();
     setChannel(json?.items[0]);
-  }
-
-  async function getComments() {
-    const response = await fetch(
-      `https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&maxResults=25&key=${process.env.API_KEY}&videoId=${id}`
-    );
-    const json = await response.json();
-    setComments(json);
   }
 
   if (!video) return null;
@@ -226,11 +217,7 @@ const WatchSection = () => {
             {showDescription ? "Show less" : "...more"}
           </button>
         </div>
-        <div className="video-comments">
-          {comments?.items?.map((comment) => (
-            <CommentContent key={comment?.id} comment={comment} />
-          ))}
-        </div>
+        <CommentSection id={id} commentCount={commentCount} />
       </div>
       <SuggestedVideoSection />
     </div>
