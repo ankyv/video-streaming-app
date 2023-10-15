@@ -104,7 +104,7 @@
   .interpunct {
   font-weight: 600;
   margin: 0 0.4rem;
-  margin-top: 0.4rem;
+  /* margin-top: 0.4rem; */
 }
 
 .suggested-video-card
