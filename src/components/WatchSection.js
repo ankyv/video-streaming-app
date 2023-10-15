@@ -44,10 +44,17 @@ const WatchSection = () => {
     setLikeCount(parseInt(video?.statistics?.likeCount));
   }, [video]);
 
+  /*
+  When clicking a suggested video, it calls WatchSection with a new ID. 
+  WatchSection already has data, so it won't make new API calls, 
+  displaying previous video data. To trigger API calls again, 
+  we use useEffect with the ID as a dependency. When the ID changes, 
+  new API calls are made to fetch updated video data.
+  */
   useEffect(() => {
     getVideoDetails();
     getComments();
-  }, []);
+  }, [id]);
 
   useEffect(() => {
     if (channelId) {
