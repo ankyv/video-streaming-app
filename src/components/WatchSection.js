@@ -22,15 +22,17 @@ const WatchSection = () => {
   const [channel, setChannel] = useState(null);
   const [comments, setComments] = useState(null);
   const [showDescription, setShowDescription] = useState(false);
+  const [isSubscribed, setIsSubscribed] = useState(false);
   const [isLike, setIsLike] = useState(false);
   const [isDislike, setIsDislike] = useState(false);
   const [isShare, setIsShare] = useState(false);
   const [isDownload, setIsDownload] = useState(false);
   const [likeCount, setLikeCount] = useState(null);
+  const [subscriberCount, setSubscriberCount] = useState(null);
 
   const channelId = video?.snippet?.channelId;
   const channelThumbnailSrc = getThumbnailSrc(channel?.snippet?.thumbnails);
-  const subscriberCount = getCount(channel?.statistics?.subscriberCount);
+  const subscriberCountString = getCount(subscriberCount);
 
   const videoTitle = video?.snippet?.title;
   const channelTitle = video?.snippet?.channelTitle;
@@ -43,6 +45,11 @@ const WatchSection = () => {
   useEffect(() => {
     setLikeCount(parseInt(video?.statistics?.likeCount));
   }, [video]);
+
+  // As soon as we get channel data, we will update subscriberCount state variable.
+  useEffect(() => {
+    setSubscriberCount(parseInt(channel?.statistics?.subscriberCount));
+  }, [channel]);
 
   /*
   When clicking a suggested video, it calls WatchSection with a new ID. 
@@ -109,11 +116,28 @@ const WatchSection = () => {
               <div className="channel-data">
                 <h2 className="channel-title">{channelTitle}</h2>
                 <p className="channel-subscribers-count">
-                  {subscriberCount} subscribers
+                  {subscriberCountString} subscribers
                 </p>
               </div>
             </div>
-            <button className="subscribe-btn">Subscribe</button>
+            <button
+              onClick={() => {
+                setIsSubscribed(!isSubscribed);
+                {
+                  isSubscribed
+                    ? setSubscriberCount(subscriberCount - 1)
+                    : setSubscriberCount(subscriberCount + 1);
+                }
+                document
+                  .querySelector(
+                    ".watch-section .video-section .video-info .channel-section .subscribe-btn"
+                  )
+                  .classList.toggle("subscribed");
+              }}
+              className="subscribe-btn"
+            >
+              {isSubscribed ? "Subscribed" : "Subscribe"}
+            </button>
           </div>
           <div className="video-options">
             <div>
