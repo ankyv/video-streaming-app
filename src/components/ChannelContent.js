@@ -1,22 +1,27 @@
 import { useEffect, useState } from "react";
 import { getCount, getThumbnailSrc } from "../utils/helper";
+import { SubscribeButton } from "./index";
 import "../styles/ChannelContent.css";
 
 const ChannelContent = ({ channel }) => {
   const [channelData, setChannelData] = useState(null);
+  const [isSubscribed, setIsSubscribed] = useState(false);
+  const [subscriberCount, setSubscriberCount] = useState(null);
 
   const channelId = channel?.id?.channelId;
   const channelSrc = getThumbnailSrc(channel?.snippet?.thumbnails);
   const channelTitle = channel?.snippet?.channelTitle;
   const channelUsername = channelData?.snippet?.customUrl;
-  const channelSubscriberCount = getCount(
-    channelData?.statistics?.subscriberCount
-  );
+  const channelSubscriberCountString = getCount(subscriberCount);
   const channelDescription = channel?.snippet?.description;
 
   useEffect(() => {
     getChannelData();
   }, []);
+
+  useEffect(() => {
+    setSubscriberCount(parseInt(channelData?.statistics?.subscriberCount));
+  }, [channelData]);
 
   async function getChannelData() {
     const response = await fetch(
@@ -34,22 +39,30 @@ const ChannelContent = ({ channel }) => {
         </div>
       </div>
       <div className="channel-data">
-        <div className="channel-title">
-          <h2>{channelTitle}</h2>
+        <div className="channel-data-container">
+          <div className="channel-title">
+            <h2>{channelTitle}</h2>
+          </div>
+          <div className="channel-info">
+            <p className="channel-username">{channelUsername}</p>
+            <p className="interpunct">•</p>
+            <p className="channel-subscriber-count">
+              {channelSubscriberCountString} subscribers
+            </p>
+          </div>
+          <div className="channel-description">
+            <p>{channelDescription}</p>
+          </div>
         </div>
-        <div className="channel-info">
-          <p className="channel-username">{channelUsername}</p>
-          <p className="interpunct">•</p>
-          <p className="channel-subscriber-count">
-            {channelSubscriberCount} subscribers
-          </p>
-        </div>
-        <div className="channel-description">
-          <p>{channelDescription}</p>
-        </div>
-        <button className="subscribe-btn">Subscribe</button>
+        <SubscribeButton
+          isSubscribed={isSubscribed}
+          setIsSubscribed={setIsSubscribed}
+          subscriberCount={subscriberCount}
+          setSubscriberCount={(value) => {
+            setSubscriberCount(value);
+          }}
+        />
       </div>
-      <button className="subscribe-btn">Subscribe</button>
     </div>
   );
 };

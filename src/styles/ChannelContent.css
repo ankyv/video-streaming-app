@@ -28,67 +28,50 @@
 }
 
 .channel-content .channel-data {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   flex-grow: 1;
-  padding: 0 2rem 2rem 0;
 }
 
-.channel-content .channel-data .subscribe-btn {
-  display: none;
-}
-
-.channel-content .channel-data .channel-title {
+.channel-content .channel-data .channel-data-container .channel-title {
   margin-bottom: 0.6rem;
 }
 
-.channel-content .channel-data .channel-title h2 {
+.channel-content .channel-data .channel-data-container .channel-title h2 {
   color: var(--text-clr);
   font-size: 1.8rem;
   font-weight: 500;
 }
 
-.channel-content .channel-data .channel-info {
+.channel-content .channel-data .channel-data-container .channel-info {
   color: var(--text-light);
   display: flex;
   font-size: 1.2rem;
   margin-bottom: 0.4rem;
 }
 
-.channel-content .channel-data .channel-info .interpunct {
+.channel-content
+  .channel-data
+  .channel-data-container
+  .channel-info
+  .interpunct {
   font-weight: 600;
   margin: 0 0.4rem;
 }
 
-.channel-content .channel-data .channel-description {
+.channel-content .channel-data .channel-data-container .channel-description {
   color: var(--text-light);
   font-size: 1.2rem;
 }
 
-.channel-content .subscribe-btn {
-  background-color: var(--text-clr);
-  border: none;
-  border-radius: 10rem;
-  color: var(--bg-clr);
-  font-size: 1.4rem;
-  font-weight: 600;
-  padding: 1rem 1.6rem;
-  cursor: pointer;
-  user-select: none;
-}
-
-.channel-content .subscribe-btn:hover {
-  background-color: var(--subscribe-btn-hover);
-}
-
 @media (max-width: 950px) {
+  .channel-content .channel-data {
+    flex-direction: column;
+    align-items: flex-start;
+  }
   .channel-content .channel-data .channel-description {
     display: none;
-  }
-  .channel-content .subscribe-btn {
-    display: none;
-  }
-  .channel-content .channel-data .subscribe-btn {
-    display: block;
-    margin-top: 1rem;
   }
 }
 

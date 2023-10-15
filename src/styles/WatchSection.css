@@ -85,43 +85,6 @@
   font-size: 1.2rem;
 }
 
-.watch-section .video-section .video-info .channel-section .subscribe-btn {
-  background-color: var(--text-clr);
-  border: none;
-  border-radius: 10rem;
-  color: var(--bg-clr);
-  font-size: 1.4rem;
-  font-weight: 600;
-  padding: 1rem 1.6rem;
-  cursor: pointer;
-  user-select: none;
-}
-
-.watch-section
-  .video-section
-  .video-info
-  .channel-section
-  .subscribe-btn.subscribed {
-  background-color: var(--btn-bg);
-  color: var(--text-clr);
-}
-
-.watch-section
-  .video-section
-  .video-info
-  .channel-section
-  .subscribe-btn.subscribed:hover {
-  background-color: var(--btn-bg-hover);
-}
-
-.watch-section
-  .video-section
-  .video-info
-  .channel-section
-  .subscribe-btn:hover {
-  background-color: var(--subscribe-btn-hover);
-}
-
 .watch-section .video-section .video-info .video-options {
   display: flex;
   flex-grow: 1;

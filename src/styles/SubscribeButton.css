@@ -1,0 +1,24 @@
+.subscribe-btn {
+  background-color: var(--text-clr);
+  border: none;
+  border-radius: 10rem;
+  color: var(--bg-clr);
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 1rem 1.6rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.subscribe-btn.subscribed {
+  background-color: var(--btn-bg);
+  color: var(--text-clr);
+}
+
+.subscribe-btn.subscribed:hover {
+  background-color: var(--btn-bg-hover);
+}
+
+.subscribe-btn:hover {
+  background-color: var(--subscribe-btn-hover);
+}

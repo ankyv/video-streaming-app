@@ -1,3 +1,5 @@
+import "../styles/SubscribeButton.css";
+
 const SubscribeButton = ({
   isSubscribed,
   setIsSubscribed,
@@ -8,16 +10,10 @@ const SubscribeButton = ({
     <button
       onClick={() => {
         setIsSubscribed(!isSubscribed);
-        {
-          isSubscribed
-            ? setSubscriberCount(subscriberCount - 1)
-            : setSubscriberCount(subscriberCount + 1);
-        }
-        document
-          .querySelector(
-            ".watch-section .video-section .video-info .channel-section .subscribe-btn"
-          )
-          .classList.toggle("subscribed");
+        isSubscribed
+          ? setSubscriberCount(subscriberCount - 1)
+          : setSubscriberCount(subscriberCount + 1);
+        document.querySelector(".subscribe-btn").classList.toggle("subscribed");
       }}
       className="subscribe-btn"
     >
