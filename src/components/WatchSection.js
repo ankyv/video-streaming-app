@@ -60,6 +60,18 @@ const WatchSection = () => {
   */
   useEffect(() => {
     getVideoDetails();
+    setShowDescription(false);
+    setIsSubscribed(false);
+    document
+      .querySelector(
+        ".watch-section .video-section .video-info .channel-section .subscribe-btn"
+      )
+      ?.classList?.remove("subscribed");
+    setIsLike(false);
+    setIsDislike(false);
+    setIsShare(false);
+    setIsDownload(false);
+    window.scrollTo(0, 0);
   }, [id]);
 
   useEffect(() => {
