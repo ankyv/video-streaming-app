@@ -16,6 +16,7 @@ import {
   CommentSection,
   SubscribeButton,
   SuggestedVideoSection,
+  ShimmerWatchSection,
 } from "./index";
 import "../styles/WatchSection.css";
 
@@ -100,7 +101,7 @@ const WatchSection = () => {
     setChannel(json?.items[0]);
   }
 
-  if (!video) return null;
+  if (!video) return <ShimmerWatchSection />;
 
   return (
     <div className="watch-section">

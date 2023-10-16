@@ -12,6 +12,7 @@ import SearchContainer from "./SearchContainer";
 import SearchPage from "./SearchPage";
 import ShimmerSection from "./ShimmerSection";
 import ShimmerVideoCard from "./ShimmerVideoCard";
+import ShimmerWatchSection from "./ShimmerWatchSection";
 import SidebarLarge from "./SidebarLarge";
 import SidebarSmall from "./SidebarSmall";
 import SubscribeButton from "./SubscribeButton";
@@ -37,6 +38,7 @@ export {
   SearchPage,
   ShimmerSection,
   ShimmerVideoCard,
+  ShimmerWatchSection,
   SidebarLarge,
   SidebarSmall,
   SubscribeButton,

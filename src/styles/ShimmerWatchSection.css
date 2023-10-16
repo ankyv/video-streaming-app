@@ -1,0 +1,370 @@
+.shimmer-watch-section {
+  display: flex;
+  justify-content: center;
+  max-width: 1800px;
+  width: 100%;
+  margin: auto;
+  padding: 2rem;
+}
+
+.shimmer-watch-section .video-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 70%;
+  min-width: 670px;
+  margin-right: 2rem;
+}
+
+.shimmer-watch-section .video-section .video-stream {
+  background-color: var(--btn-bg-hover);
+  border-radius: 1.2rem;
+  /* box-shadow: 0px 0px 300px 60px rgba(255, 255, 255, 0.275); */
+  height: 38vw;
+  width: 100%;
+  max-height: 684px;
+  margin-bottom: 1.2rem;
+}
+
+.shimmer-watch-section .video-section .video-title {
+  background-color: var(--btn-bg-hover);
+  border-radius: 0.4rem;
+  height: 28px;
+  margin-bottom: 1.2rem;
+  width: 90%;
+}
+
+.shimmer-watch-section .video-section .video-info {
+  display: flex;
+  margin-bottom: 1.6rem;
+  width: 100%;
+}
+
+.shimmer-watch-section .video-section .video-info .channel-section {
+  display: flex;
+  align-items: center;
+  flex-grow: 4;
+}
+
+.shimmer-watch-section
+  .video-section
+  .video-info
+  .channel-section
+  .channel-info {
+  display: flex;
+  margin-right: 2.8rem;
+}
+
+.shimmer-watch-section
+  .video-section
+  .video-info
+  .channel-section
+  .channel-image {
+  background-color: var(--btn-bg-hover);
+  border-radius: 10rem;
+  height: 40px;
+  width: 40px;
+  margin-right: 1.4rem;
+}
+
+.shimmer-watch-section
+  .video-section
+  .video-info
+  .channel-section
+  .channel-data
+  .channel-title {
+  background-color: var(--btn-bg-hover);
+  border-radius: 0.4rem;
+  width: 140px;
+  height: 20px;
+  margin-bottom: 0.4rem;
+}
+
+.shimmer-watch-section
+  .video-section
+  .video-info
+  .channel-section
+  .channel-data
+  .channel-subscribers-count {
+  background-color: var(--btn-bg-hover);
+  border-radius: 0.4rem;
+  width: 100px;
+  height: 20px;
+  margin-bottom: 0.4rem;
+}
+
+.shimmer-watch-section
+  .video-section
+  .video-info
+  .channel-section
+  .subscribe-btn {
+  background-color: var(--btn-bg-hover);
+  border-radius: 10rem;
+  height: 40px;
+  width: 120px;
+}
+
+.shimmer-watch-section .video-section .video-info .video-options {
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.shimmer-watch-section .video-section .video-info .video-options > div {
+  background-color: var(--btn-bg-hover);
+  border-radius: 10rem;
+  display: flex;
+  height: 40px;
+  width: 80px;
+  padding: 0rem 2rem;
+  margin-right: 0.8rem;
+}
+
+.shimmer-watch-section .video-section .video-description {
+  background-color: var(--btn-bg-hover);
+  border-radius: 1.2rem;
+  height: 150px;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.shimmer-watch-section .suggested-video-section {
+  width: 30%;
+  min-width: 280px;
+  padding-top: 1.4rem;
+}
+
+.shimmer-watch-section .suggested-video-card {
+  display: flex;
+  width: 100%;
+  margin-bottom: 1.2rem;
+}
+
+.shimmer-watch-section .suggested-video-card .suggested-video-card-thumbnail {
+  background-color: var(--btn-bg-hover);
+  border-radius: 1.2rem;
+  width: 170px;
+  height: 100px;
+  margin-right: 0.8rem;
+}
+
+.shimmer-watch-section .suggested-video-card .suggested-video-card-details {
+  display: flex;
+  width: 55%;
+}
+
+.shimmer-watch-section
+  .suggested-video-card
+  .suggested-video-card-details
+  .video-channel {
+  display: none;
+}
+
+.shimmer-watch-section
+  .suggested-video-card
+  .suggested-video-card-details
+  .suggested-video-details
+  .suggested-video-detail {
+  background-color: var(--btn-bg-hover);
+  border-radius: 0.4rem;
+  width: 140px;
+  height: 20px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.shimmer-watch-section
+  .suggested-video-card
+  .suggested-video-card-details
+  .suggested-video-details
+  .suggested-video-detail:nth-child(2) {
+  width: 80px;
+}
+
+.shimmer-watch-section
+  .suggested-video-card
+  .suggested-video-card-details
+  .suggested-video-details
+  .suggested-video-detail:nth-child(3) {
+  width: 100px;
+}
+
+@media (max-width: 1400px) {
+  .shimmer-watch-section .video-section .video-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 1020px) {
+  .shimmer-watch-section {
+    flex-direction: column;
+  }
+  .shimmer-watch-section .video-section {
+    width: 90%;
+    min-width: unset;
+  }
+  .shimmer-watch-section .video-section .video-stream {
+    height: 49vw;
+  }
+
+  .shimmer-watch-section .suggested-video-section {
+    width: 90%;
+    padding: 0;
+  }
+
+  .shimmer-watch-section .suggested-video-card .suggested-video-thumbnail {
+    min-width: 170px;
+  }
+  .shimmer-watch-section .suggested-video-card .suggested-video-card-details {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .shimmer-watch-section .suggested-video-section {
+    margin-top: 2rem;
+  }
+  .shimmer-watch-section
+    .suggested-video-card
+    .suggested-video-card-details
+    .suggested-video-details
+    .suggested-video-detail {
+    width: 260px;
+  }
+  .shimmer-watch-section
+    .suggested-video-card
+    .suggested-video-card-details
+    .suggested-video-details
+    .suggested-video-detail:nth-child(2) {
+    width: 100px;
+  }
+  .shimmer-watch-section
+    .suggested-video-card
+    .suggested-video-card-details
+    .suggested-video-details
+    .suggested-video-detail:nth-child(3) {
+    width: 200px;
+  }
+}
+
+@media (max-width: 900px) {
+  .shimmer-watch-section .video-section .video-info .channel-section {
+    justify-content: space-between;
+    padding: 0 1rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .shimmer-watch-section .video-section {
+    width: 100%;
+  }
+  .shimmer-watch-section .video-section .video-stream {
+    height: 53vw;
+  }
+  .shimmer-watch-section .video-section .video-info .video-options .option-btn {
+    display: flex;
+  }
+  .shimmer-watch-section
+    .video-section
+    .video-info
+    .video-options
+    .option-btn
+    svg {
+    width: 16px;
+  }
+
+  .shimmer-watch-section .suggested-video-section {
+    width: 100%;
+  }
+}
+
+@media (max-width: 430px) {
+  .shimmer-watch-section .suggested-video-card {
+    border-radius: 1.2rem;
+    flex-direction: column;
+    margin-bottom: 2.4rem;
+  }
+
+  .shimmer-watch-section .suggested-video-card .suggested-video-card-thumbnail {
+    width: 100%;
+    height: 50vw;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .shimmer-watch-section
+    .suggested-video-card
+    .suggested-video-card-details
+    .video-channel {
+    display: block;
+  }
+
+  .shimmer-watch-section
+    .suggested-video-card
+    .suggested-video-card-details
+    .video-channel
+    .video-channel-image {
+    border-radius: 10rem;
+    width: 40px;
+    height: 40px;
+  }
+
+  .shimmer-watch-section
+    .suggested-video-card
+    .suggested-video-card-details
+    .suggested-video-details {
+    margin-left: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .shimmer-watch-section {
+    padding: 0;
+  }
+  .shimmer-watch-section .video-section .video-stream {
+    border-radius: 0;
+    height: 56vw;
+  }
+  .shimmer-watch-section .video-section .video-description {
+    margin: auto;
+    margin-bottom: 2rem;
+  }
+
+  .shimmer-watch-section .suggested-video-card {
+    border-radius: 0;
+  }
+
+  .shimmer-watch-section .suggested-video-card .suggested-video-card-thumbnail {
+    border-radius: 0;
+  }
+  .shimmer-watch-section .suggested-video-card .suggested-video-card-details {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 385px) {
+  .shimmer-watch-section
+    .video-section
+    .video-info
+    .video-options
+    .download-btn {
+    display: none;
+  }
+}
+
+@media (max-width: 300px) {
+  .shimmer-watch-section .video-section .video-info .channel-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .shimmer-watch-section
+    .video-section
+    .video-info
+    .channel-section
+    .subscribe-btn {
+    margin-top: 1rem;
+  }
+}
