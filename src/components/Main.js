@@ -5,9 +5,6 @@ import "../styles/Main.css";
 const Main = () => {
   return (
     <div className="main">
-      <div className="main-search-box">
-        <SearchContainer />
-      </div>
       <RecentLinks />
       <Outlet />
     </div>

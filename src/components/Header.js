@@ -6,6 +6,7 @@ import {
   MenuIcon,
   MicIcon,
   NotificationIcon,
+  SearchIcon,
   VideoAddIcon,
 } from "../icons";
 import { useDispatch } from "react-redux";
@@ -51,7 +52,13 @@ const Header = () => {
         </div>
       </div>
       <div className="header-right">
+        <div className="search-icon">
+          <Link to={"/search"}>
+            <SearchIcon color={"var(--text-clr)"} />
+          </Link>
+        </div>
         <div
+          className="theme-icon"
           onClick={() => {
             dispatch(toggleTheme());
           }}
@@ -62,13 +69,13 @@ const Header = () => {
             <LightIcon color={"var(--text-clr)"} />
           )}
         </div>
-        <div>
+        <div className="video-add-icon">
           <VideoAddIcon color={"var(--text-clr)"} />
         </div>
-        <div>
+        <div className="notification-icon">
           <NotificationIcon color={"var(--text-clr)"} />
         </div>
-        <div>
+        <div className="account-icon">
           <AccountIcon color={"var(--text-clr)"} />
         </div>
       </div>

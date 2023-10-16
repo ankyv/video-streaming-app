@@ -10,6 +10,7 @@ import {
   Main,
   VideoSection,
   ResultSection,
+  SearchPage,
 } from "./components";
 
 const App = () => {
@@ -51,6 +52,10 @@ const appRouter = createBrowserRouter([
         element: <WatchSection />,
       },
     ],
+  },
+  {
+    path: "/search",
+    element: <SearchPage />,
   },
 ]);
 

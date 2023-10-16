@@ -27,9 +27,6 @@
 }
 
 @media (max-width: 800px) {
-  .recent-links {
-    top: 114px;
-  }
   .recent-links .recent-link:first-child {
     margin-left: 1rem;
   }

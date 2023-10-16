@@ -9,6 +9,7 @@ import PlaylistContent from "./PlaylistContent";
 import RecentLinks from "./RecentLinks";
 import ResultSection from "./ResultSection";
 import SearchContainer from "./SearchContainer";
+import SearchPage from "./SearchPage";
 import SidebarLarge from "./SidebarLarge";
 import SidebarSmall from "./SidebarSmall";
 import SubscribeButton from "./SubscribeButton";
@@ -31,6 +32,7 @@ export {
   RecentLinks,
   ResultSection,
   SearchContainer,
+  SearchPage,
   SidebarLarge,
   SidebarSmall,
   SubscribeButton,
