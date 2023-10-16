@@ -165,4 +165,7 @@
     .suggested-video-thumbnail {
     border-radius: 0;
   }
+  .suggested-video-card .suggested-video-card-details {
+    padding: 0 1rem;
+  }
 }
