@@ -8,7 +8,8 @@ const Body = () => {
 
   return (
     <div className="body">
-      {isVisible ? <SidebarLarge /> : <SidebarSmall />}
+      <SidebarSmall />
+      {isVisible && <SidebarLarge />}
       <Outlet />
     </div>
   );

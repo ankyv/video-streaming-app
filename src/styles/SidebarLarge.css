@@ -1,10 +1,17 @@
 .sidebar-large {
   background-color: var(--bg-clr);
   display: inline-block;
+  height: calc(100vh - 60px);
+  width: 280px;
   padding-left: 1rem;
+  padding-right: 2rem;
+  position: fixed;
+  top: 61px;
+  /* It should be 60px from top as Header height is 60px.
+  But to be safe, moved down a little extra. */
+  z-index: 100;
+  overflow: auto;
   user-select: none;
-  position: sticky;
-  top: 60px;
 }
 
 .sidebar-large .sidebar-section {
@@ -33,22 +40,4 @@
   font-size: 1.4rem;
   margin-left: 2.6rem;
   margin-top: 0.2rem;
-}
-
-@media (max-width: 1250px) {
-  .sidebar-large {
-    display: none;
-  }
-}
-
-@media (max-width: 500px) {
-  .sidebar-large {
-    display: unset;
-    height: 90.5vh;
-    width: 260px;
-    padding-right: 2rem;
-    position: fixed;
-    z-index: 100;
-    overflow: auto;
-  }
 }
