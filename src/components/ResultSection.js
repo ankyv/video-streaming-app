@@ -1,7 +1,12 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { ChannelContent, PlaylistContent, VideoContent } from "./index";
+import {
+  ChannelContent,
+  PlaylistContent,
+  ShimmerResultSection,
+  VideoContent,
+} from "./index";
 import "../styles/ResultSection.css";
 
 const ResultSection = () => {
@@ -26,7 +31,7 @@ const ResultSection = () => {
     json?.nextPageToken ? setPageToken(json?.nextPageToken) : setPageToken("");
   }
 
-  if (!resultData.length) return null;
+  if (!resultData.length) return <ShimmerResultSection />;
 
   return (
     <div className="result-section">

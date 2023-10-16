@@ -10,6 +10,7 @@ import RecentLinks from "./RecentLinks";
 import ResultSection from "./ResultSection";
 import SearchContainer from "./SearchContainer";
 import SearchPage from "./SearchPage";
+import ShimmerResultSection from "./ShimmerResultSection";
 import ShimmerSection from "./ShimmerSection";
 import ShimmerVideoCard from "./ShimmerVideoCard";
 import ShimmerWatchSection from "./ShimmerWatchSection";
@@ -36,6 +37,7 @@ export {
   ResultSection,
   SearchContainer,
   SearchPage,
+  ShimmerResultSection,
   ShimmerSection,
   ShimmerVideoCard,
   ShimmerWatchSection,
