@@ -41,7 +41,7 @@ const Header = () => {
         <Link to="/">
           <div className="logo-container">
             <LogoIcon color={"var(--text-clr)"} />
-            <h1>Project</h1>
+            <h1>AVTube</h1>
           </div>
         </Link>
       </div>

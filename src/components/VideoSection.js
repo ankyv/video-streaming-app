@@ -3,7 +3,7 @@ import { API_DATA_URL } from "../constants";
 import "dotenv/config";
 import { Link } from "react-router-dom";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { VideoCard } from "./index";
+import { ShimmerSection, VideoCard } from "./index";
 import "../styles/VideoSection.css";
 
 const VideoSection = () => {
@@ -26,7 +26,7 @@ const VideoSection = () => {
     json?.nextPageToken ? setPageToken(json?.nextPageToken) : setPageToken("");
   }
 
-  if (!videoList.length) return null;
+  if (!videoList.length) return <ShimmerSection />;
 
   return (
     <div className="video-section">
@@ -36,7 +36,7 @@ const VideoSection = () => {
           getVideoList();
         }}
         hasMore={pageToken}
-        loader={<h4>Loading..</h4>}
+        loader={<ShimmerSection />}
         className="video-section"
       >
         {videoList.map((video) => {

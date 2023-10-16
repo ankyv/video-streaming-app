@@ -10,6 +10,8 @@ import RecentLinks from "./RecentLinks";
 import ResultSection from "./ResultSection";
 import SearchContainer from "./SearchContainer";
 import SearchPage from "./SearchPage";
+import ShimmerSection from "./ShimmerSection";
+import ShimmerVideoCard from "./ShimmerVideoCard";
 import SidebarLarge from "./SidebarLarge";
 import SidebarSmall from "./SidebarSmall";
 import SubscribeButton from "./SubscribeButton";
@@ -33,6 +35,8 @@ export {
   ResultSection,
   SearchContainer,
   SearchPage,
+  ShimmerSection,
+  ShimmerVideoCard,
   SidebarLarge,
   SidebarSmall,
   SubscribeButton,
