@@ -7,8 +7,6 @@ const SearchContainer = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState(null);
 
-  const modifiedQuery = searchQuery.replace(" ", "%20");
-
   useEffect(() => {
     const timer = setTimeout(() => {
       getSearchResults();
@@ -37,7 +35,7 @@ const SearchContainer = () => {
           setSearchQuery(e.target.value);
         }}
       />
-      <Link to={"/results/" + modifiedQuery}>
+      <Link to={"/results/" + searchQuery}>
         <button
           onClick={() => {
             setSearchQuery("");
@@ -51,16 +49,19 @@ const SearchContainer = () => {
         <div className="search-results">
           {searchResults?.map((searchResult) => {
             return (
-              <li
-                key={searchResult}
-                onClick={() => {
-                  setSearchQuery(searchResult);
-                }}
-                className="search-result"
-              >
-                <SearchIcon color={"var(--text-clr)"} size={18} />
-                <p>{searchResult}</p>
-              </li>
+              <Link to={"/results/" + searchResult}>
+                <li
+                  key={searchResult}
+                  onClick={() => {
+                    setSearchQuery("");
+                    setSearchResults(null);
+                  }}
+                  className="search-result"
+                >
+                  <SearchIcon color={"var(--text-clr)"} size={18} />
+                  <p>{searchResult}</p>
+                </li>
+              </Link>
             );
           })}
         </div>
