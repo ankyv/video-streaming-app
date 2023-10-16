@@ -40,3 +40,15 @@
     display: none;
   }
 }
+
+@media (max-width: 500px) {
+  .sidebar-large {
+    display: unset;
+    height: 90.5vh;
+    width: 260px;
+    padding-right: 2rem;
+    position: fixed;
+    z-index: 100;
+    overflow: auto;
+  }
+}
