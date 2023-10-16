@@ -45,11 +45,11 @@ const appRouter = createBrowserRouter([
               },
             ],
           },
+          {
+            path: "/watch/:id",
+            element: <WatchSection />,
+          },
         ],
-      },
-      {
-        path: "/watch/:id",
-        element: <WatchSection />,
       },
     ],
   },
