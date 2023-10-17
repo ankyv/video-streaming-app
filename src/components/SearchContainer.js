@@ -49,9 +49,8 @@ const SearchContainer = () => {
         <div className="search-results">
           {searchResults?.map((searchResult) => {
             return (
-              <Link to={"/results/" + searchResult}>
+              <Link key={searchResult} to={"/results/" + searchResult}>
                 <li
-                  key={searchResult}
                   onClick={() => {
                     setSearchQuery("");
                     setSearchResults(null);

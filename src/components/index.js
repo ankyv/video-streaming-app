@@ -6,6 +6,8 @@ import CommentSection from "./CommentSection";
 import Header from "./Header";
 import Main from "./Main";
 import PlaylistContent from "./PlaylistContent";
+import PlaylistPage from "./PlaylistPage";
+import PlaylistVideoCard from "./PlaylistVideoCard";
 import RecentLinks from "./RecentLinks";
 import ResultSection from "./ResultSection";
 import SearchContainer from "./SearchContainer";
@@ -33,6 +35,8 @@ export {
   Header,
   Main,
   PlaylistContent,
+  PlaylistPage,
+  PlaylistVideoCard,
   RecentLinks,
   ResultSection,
   SearchContainer,
