@@ -1,10 +1,12 @@
 import Body from "./Body";
 import ChannelContent from "./ChannelContent";
+import ChannelPage from "./ChannelPage";
 import CommentContent from "./CommentContent";
 import CommentReplies from "./CommentReplies";
 import CommentSection from "./CommentSection";
 import Header from "./Header";
 import Main from "./Main";
+import PlaylistCard from "./PlaylistCard";
 import PlaylistContent from "./PlaylistContent";
 import PlaylistPage from "./PlaylistPage";
 import PlaylistVideoCard from "./PlaylistVideoCard";
@@ -29,11 +31,13 @@ import WatchSection from "./WatchSection";
 export {
   Body,
   ChannelContent,
+  ChannelPage,
   CommentContent,
   CommentReplies,
   CommentSection,
   Header,
   Main,
+  PlaylistCard,
   PlaylistContent,
   PlaylistPage,
   PlaylistVideoCard,

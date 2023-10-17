@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import {
   Header,
   Body,
+  ChannelPage,
   WatchSection,
   Main,
   VideoSection,
@@ -53,6 +54,10 @@ const appRouter = createBrowserRouter([
           {
             path: "/playlist/:id",
             element: <PlaylistPage />,
+          },
+          {
+            path: "/channel/:channelId",
+            element: <ChannelPage />,
           },
         ],
       },
