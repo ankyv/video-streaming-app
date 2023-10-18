@@ -52,6 +52,10 @@ const appRouter = createBrowserRouter([
             element: <WatchSection />,
           },
           {
+            path: "/watch/:id/:playlistId",
+            element: <WatchSection />,
+          },
+          {
             path: "/playlist/:id",
             element: <PlaylistPage />,
           },

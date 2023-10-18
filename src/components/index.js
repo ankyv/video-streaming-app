@@ -10,6 +10,7 @@ import PlaylistCard from "./PlaylistCard";
 import PlaylistContent from "./PlaylistContent";
 import PlaylistPage from "./PlaylistPage";
 import PlaylistVideoCard from "./PlaylistVideoCard";
+import PlaylistVideoList from "./PlaylistVideoList";
 import RecentLinks from "./RecentLinks";
 import ResultSection from "./ResultSection";
 import SearchContainer from "./SearchContainer";
@@ -22,6 +23,7 @@ import SidebarLarge from "./SidebarLarge";
 import SidebarSmall from "./SidebarSmall";
 import SubscribeButton from "./SubscribeButton";
 import SuggestedVideoCard from "./SuggestedVideoCard";
+import SuggestedVideoList from "./SuggestedVideoList";
 import SuggestedVideoSection from "./SuggestedVideoSection";
 import VideoCard from "./VideoCard";
 import VideoContent from "./VideoContent";
@@ -41,6 +43,7 @@ export {
   PlaylistContent,
   PlaylistPage,
   PlaylistVideoCard,
+  PlaylistVideoList,
   RecentLinks,
   ResultSection,
   SearchContainer,
@@ -53,6 +56,7 @@ export {
   SidebarSmall,
   SubscribeButton,
   SuggestedVideoCard,
+  SuggestedVideoList,
   SuggestedVideoSection,
   VideoCard,
   VideoContent,

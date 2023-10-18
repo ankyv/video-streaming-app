@@ -21,7 +21,7 @@ import {
 import "../styles/WatchSection.css";
 
 const WatchSection = () => {
-  const { id } = useParams();
+  const { id, playlistId } = useParams();
 
   const [video, setVideo] = useState(null);
   const [channel, setChannel] = useState(null);
@@ -226,7 +226,7 @@ const WatchSection = () => {
         </div>
         <CommentSection id={id} commentCount={commentCount} />
       </div>
-      <SuggestedVideoSection />
+      <SuggestedVideoSection playlistId={playlistId} />
     </div>
   );
 };
