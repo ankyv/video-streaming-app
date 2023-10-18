@@ -1,7 +1,8 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { getThumbnailSrc } from "../utils/helper";
 import usePlaylistItems from "../utils/usePlaylistItems";
 import { PlaylistVideoCard } from "./index";
+import "../styles/PlaylistPage.css";
 
 const PlaylistPage = () => {
   const { id } = useParams();
@@ -21,35 +22,45 @@ const PlaylistPage = () => {
   return (
     <div className="playlist-page">
       <div className="playlist-section">
-        <div className="playlist-thumbnail">
-          <div className="playlist-thumbnail-image">
-            <img src={thumbnailSrc} />
+        <div className="playlist-section-container">
+          <Link
+            to={
+              "/watch/" + playlistItems?.[0]?.contentDetails?.videoId + "/" + id
+            }
+          >
+            <div className="playlist-thumbnail">
+              <div className="playlist-thumbnail-image">
+                <img src={thumbnailSrc} />
+              </div>
+            </div>
+          </Link>
+          <div className="playlist-details">
+            <h1 className="playlist-title">{title}</h1>
+            <h3 className="channel-title">{channelTitle}</h3>
+            <p>{videoCount} videos</p>
+            <p>{viewCount} views</p>
+            <p>{publishedAt}</p>
+            {/* <div className="playlist-buttons">
+              <button></button>
+              <button></button>
+              <button></button>
+              <button></button>
+            </div> */}
+            <div className="play-buttons">
+              <button className="play-all-btn">Play all</button>
+              {/* <button></button> */}
+            </div>
           </div>
-        </div>
-        <div className="playlist-details">
-          <h1 className="playlist-title">{title}</h1>
-          <h3 className="channel-title">{channelTitle}</h3>
-          <p>{videoCount} videos</p>
-          <p>{viewCount} views</p>
-          <p>{publishedAt}</p>
-          <div className="playlist-buttons">
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
+          <div className="playlist-description">
+            <p>{description}</p>
           </div>
-          <div className="play-buttons">
-            <button></button>
-            <button></button>
-          </div>
-        </div>
-        <div className="playlist-description">
-          <p>{description}</p>
         </div>
       </div>
       <div className="video-section">
         {playlistItems?.map((video) => (
-          <PlaylistVideoCard key={video?.id} video={video} />
+          <Link key={video?.id} to={"/watch/" + video?.contentDetails?.videoId}>
+            <PlaylistVideoCard video={video} />
+          </Link>
         ))}
       </div>
     </div>

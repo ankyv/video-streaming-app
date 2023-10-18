@@ -23,6 +23,7 @@ const VideoSection = () => {
     const response = await fetch(API_URL);
     const json = await response.json();
     setVideoList([...videoList, ...json?.items]);
+    console.log(json);
     json?.nextPageToken ? setPageToken(json?.nextPageToken) : setPageToken("");
   }
 

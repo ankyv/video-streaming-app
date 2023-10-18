@@ -5,7 +5,7 @@
   user-select: none;
 }
 
-.suggested-video-card .suggested-video-card-thumbnail {
+.suggested-video-card .video-thumbnail {
   width: 170px;
   height: 100px;
   margin-right: 0.8rem;
@@ -13,18 +13,13 @@
   user-select: none;
 }
 
-.suggested-video-card
-  .suggested-video-card-thumbnail
-  .suggested-video-thumbnail {
+.suggested-video-card .video-thumbnail .video-thumbnail-image {
   border-radius: 1.2rem;
   height: 100%;
   width: 100%;
 }
 
-.suggested-video-card
-  .suggested-video-card-thumbnail
-  .suggested-video-thumbnail
-  img {
+.suggested-video-card .video-thumbnail .video-thumbnail-image img {
   border-radius: inherit;
   height: 100%;
   width: 100%;
@@ -32,9 +27,7 @@
   object-position: center;
 }
 
-.suggested-video-card
-  .suggested-video-card-thumbnail
-  .suggested-video-timestamp {
+.suggested-video-card .video-thumbnail .video-timestamp {
   background-color: #282828;
   border-radius: 0.4rem;
   color: #fff;
@@ -43,82 +36,77 @@
   right: 0.5rem;
 }
 
-.suggested-video-card
-  .suggested-video-card-thumbnail
-  .suggested-video-timestamp
-  p {
+.suggested-video-card .video-thumbnail .video-timestamp p {
   font-size: 1.2rem;
   font-weight: 500;
   padding: 0.2rem 0.4rem;
 }
 
-.suggested-video-card .suggested-video-card-details {
+.suggested-video-card .video-details {
   display: flex;
   width: 55%;
 }
 
-.suggested-video-card .suggested-video-card-details .video-channel {
+.suggested-video-card .video-details .channel-thumbnail {
   display: none;
 }
 
-.suggested-video-card
-  .suggested-video-card-details
-  .suggested-video-details
-  .video-title {
-  font-size: 1.4rem;
-  font-weight: 500;
-  line-height: 2.1rem;
+.suggested-video-card .video-details .video-info .video-title {
   max-height: 4.2rem;
   margin-bottom: 0.2rem;
   overflow: hidden;
 }
 
-.suggested-video-card
-  .suggested-video-card-details
-  .suggested-video-details
-  .channel-title {
+.suggested-video-card .video-details .video-info .video-title h1 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 2.1rem;
+}
+
+.suggested-video-card .video-details .video-info .channel-title {
   color: var(--text-light);
   font-size: 1.2rem;
   letter-spacing: 0.4px;
   margin-bottom: 0.2rem;
 }
 
+.suggested-video-card .video-details .video-info .video-stats p:first-of-type,
 .suggested-video-card
-  .suggested-video-card-details
-  .suggested-video-details
-  .video-stats {
+  .video-details
+  .video-info
+  .video-stats
+  span:first-of-type {
+  display: none;
+}
+
+.suggested-video-card .video-details .video-info .video-stats {
   color: var(--text-light);
   display: flex;
+  align-items: center;
 }
 
-.suggested-video-card
-  .suggested-video-card-details
-  .suggested-video-details
-  .video-viewcount {
+.suggested-video-card .video-details .video-info .video-stats p {
   font-size: 1.2rem;
 }
 
-.suggested-video-card
-  .suggested-video-card-details
-  .suggested-video-details
-  .interpunct {
+.suggested-video-card .video-details .video-info .video-stats .interpunct {
   font-weight: 600;
   margin: 0 0.4rem;
-  /* margin-top: 0.4rem; */
 }
 
-.suggested-video-card
-  .suggested-video-card-details
-  .suggested-video-details
-  .video-publish-time {
-  font-size: 1.2rem;
+.suggested-video-card .video-details .video-info .channel-info {
+  display: none;
+}
+
+.suggested-video-card .video-details .video-info .video-description {
+  display: none;
 }
 
 @media (max-width: 1020px) {
-  .suggested-video-card .suggested-video-thumbnail {
+  .suggested-video-card .video-thumbnail-image {
     min-width: 170px;
   }
-  .suggested-video-card .suggested-video-card-details {
+  .suggested-video-card .video-details {
     width: 100%;
   }
 }
@@ -128,44 +116,42 @@
     flex-direction: column;
   }
 
-  .suggested-video-card .suggested-video-card-thumbnail {
+  .suggested-video-card .video-thumbnail {
     width: 100%;
     height: 50vw;
     margin-right: 0;
     margin-bottom: 1rem;
   }
 
-  .suggested-video-card .suggested-video-card-details .video-channel {
+  .suggested-video-card .video-details .channel-thumbnail {
     display: block;
   }
 
   .suggested-video-card
-    .suggested-video-card-details
-    .video-channel
-    .video-channel-image {
+    .video-details
+    .channel-thumbnail
+    .channel-thumbnail-image {
     border-radius: 10rem;
     width: 40px;
     height: 40px;
   }
 
-  .suggested-video-card .suggested-video-card-details .video-channel img {
+  .suggested-video-card .video-details .channel-thumbnail-image img {
     border-radius: inherit;
     height: 100%;
     width: 100%;
   }
 
-  .suggested-video-card .suggested-video-card-details .suggested-video-details {
+  .suggested-video-card .video-details .video-info {
     margin-left: 1rem;
   }
 }
 
 @media (max-width: 400px) {
-  .suggested-video-card
-    .suggested-video-card-thumbnail
-    .suggested-video-thumbnail {
+  .suggested-video-card .video-thumbnail .video-thumbnail-image {
     border-radius: 0;
   }
-  .suggested-video-card .suggested-video-card-details {
+  .suggested-video-card .video-details {
     padding: 0 1rem;
   }
 }

@@ -1,5 +1,5 @@
 import usePlaylistItems from "../utils/usePlaylistItems";
-import { PlaylistVideoCard } from "./index";
+import { SuggestedVideoCard } from "./index";
 
 const PlaylistVideoList = ({ playlistId }) => {
   const playlistItems = usePlaylistItems(playlistId);
@@ -7,7 +7,7 @@ const PlaylistVideoList = ({ playlistId }) => {
   return (
     <div className="playlist-video-list">
       {playlistItems?.map((video) => (
-        <PlaylistVideoCard key={video?.id} video={video} />
+        <SuggestedVideoCard key={video?.id} video={video} />
       ))}
     </div>
   );

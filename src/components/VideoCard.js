@@ -1,63 +1,48 @@
-import { useEffect, useState } from "react";
 import {
   getDuration,
   getPublishTime,
   getThumbnailSrc,
   getCount,
 } from "../utils/helper";
+import useChannelData from "../utils/useChannelData";
+import VideoWrapper from "./VideoWrapper";
 import "../styles/VideoCard.css";
 
 const VideoCard = ({ video }) => {
-  const [channel, setChannel] = useState(null);
-
-  const channelId = video?.snippet?.channelId;
-  const channelThumbnailSrc = getThumbnailSrc(channel?.snippet?.thumbnails);
-
+  const id = video?.id; // string
+  const caption = video?.contentDetails?.caption; // string(boolean)
+  const duration = getDuration(video?.contentDetails?.duration); // string
+  const licensedContent = video?.contentDetails?.licensedContent; // boolean
+  const channelId = video?.snippet?.channelId; // string
+  const channelTitle = video?.snippet?.channelTitle; // string
+  const description = video?.snippet?.description; // string
+  const liveBroadcastContent = video?.snippet?.liveBroadcastContent; // string
+  const publishedAt = getPublishTime(video?.snippet?.publishedAt); // string(date)
+  const tags = video?.snippet?.tags; // array(strings)
   const thumbnailSrc = getThumbnailSrc(video?.snippet?.thumbnails);
-  const duration = getDuration(video?.contentDetails?.duration);
-  const videoTitle = video?.snippet?.title;
-  const channelTitle = video?.snippet?.channelTitle;
-  const viewCount = getCount(video?.statistics?.viewCount);
-  const publishTime = getPublishTime(video?.snippet?.publishedAt);
+  const title = video?.snippet?.title; // string
+  const commentCount = getCount(video?.statistics?.commentCount); // string(number)
+  const favoriteCount = getCount(video?.statistics?.favoriteCount); // string(number)
+  const likeCount = getCount(video?.statistics?.likeCount); // string(number)
+  const viewCount = getCount(video?.statistics?.viewCount); // string(number)
 
-  useEffect(() => {
-    getChannelDetails();
-  }, []);
+  const { thumbnailSrc: channelThumbnailSrc } = useChannelData(channelId);
 
-  async function getChannelDetails() {
-    const response = await fetch(
-      `https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=${channelId}&key=${process.env.API_KEY}`
-    );
-    const json = await response.json();
-    setChannel(json?.items[0]);
-  }
+  if (!channelThumbnailSrc) return null;
 
   return (
     <div className="video-card">
-      <div className="video-card-thumbnail">
-        <div className="video-thumbnail">
-          <img src={thumbnailSrc} />
-        </div>
-        <div className="video-timestamp">
-          <p>{duration}</p>
-        </div>
-      </div>
-      <div className="video-card-details">
-        <div className="video-channel">
-          <div className="video-channel-image">
-            <img src={channelThumbnailSrc} />
-          </div>
-        </div>
-        <div className="video-details">
-          <h2 className="video-title">{videoTitle}</h2>
-          <p className="channel-title">{channelTitle}</p>
-          <div className="video-stats">
-            <p className="video-viewcount">{viewCount} views</p>
-            <p className="interpunct">•</p>
-            <p className="video-publish-time">{publishTime}</p>
-          </div>
-        </div>
-      </div>
+      <VideoWrapper
+        id={id}
+        thumbnailSrc={thumbnailSrc}
+        duration={duration}
+        channelThumbnailSrc={channelThumbnailSrc}
+        title={title}
+        channelTitle={channelTitle}
+        viewCount={viewCount}
+        publishedAt={publishedAt}
+        description={description}
+      />
     </div>
   );
 };
