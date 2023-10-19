@@ -5,10 +5,10 @@ import {
   getCount,
 } from "../utils/helper";
 import useChannelData from "../utils/useChannelData";
-import VideoWrapper from "./VideoWrapper";
-import "../styles/VideoCard.css";
+import { VideoWrapper } from "./index";
+import "../styles/VideoHomePage.css";
 
-const VideoCard = ({ video }) => {
+const VideoHomePage = ({ video }) => {
   const id = video?.id; // string
   const caption = video?.contentDetails?.caption; // string(boolean)
   const duration = getDuration(video?.contentDetails?.duration); // string
@@ -31,7 +31,7 @@ const VideoCard = ({ video }) => {
   if (!channelThumbnailSrc) return null;
 
   return (
-    <div className="video-card">
+    <div className="video-home-page">
       <VideoWrapper
         id={id}
         thumbnailSrc={thumbnailSrc}
@@ -47,4 +47,4 @@ const VideoCard = ({ video }) => {
   );
 };
 
-export default VideoCard;
+export default VideoHomePage;

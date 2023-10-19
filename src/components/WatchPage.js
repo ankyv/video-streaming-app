@@ -15,12 +15,12 @@ import { getCount, getPublishTime, getThumbnailSrc } from "../utils/helper";
 import {
   CommentSection,
   SubscribeButton,
-  SuggestedVideoSection,
+  SuggestionVideoSection,
   ShimmerWatchSection,
 } from "./index";
-import "../styles/WatchSection.css";
+import "../styles/WatchPage.css";
 
-const WatchSection = () => {
+const WatchPage = () => {
   const { id, playlistId } = useParams();
 
   const [video, setVideo] = useState(null);
@@ -104,7 +104,7 @@ const WatchSection = () => {
   if (!video) return <ShimmerWatchSection />;
 
   return (
-    <div className="watch-section">
+    <div className="watch-page">
       <div className="video-section">
         <div className="video-stream">
           <iframe
@@ -226,9 +226,9 @@ const WatchSection = () => {
         </div>
         <CommentSection id={id} commentCount={commentCount} />
       </div>
-      <SuggestedVideoSection playlistId={playlistId} />
+      <SuggestionVideoSection playlistId={playlistId} />
     </div>
   );
 };
 
-export default WatchSection;
+export default WatchPage;

@@ -22,13 +22,15 @@ import ShimmerWatchSection from "./ShimmerWatchSection";
 import SidebarLarge from "./SidebarLarge";
 import SidebarSmall from "./SidebarSmall";
 import SubscribeButton from "./SubscribeButton";
-import SuggestedVideoCard from "./SuggestedVideoCard";
-import SuggestedVideoList from "./SuggestedVideoList";
-import SuggestedVideoSection from "./SuggestedVideoSection";
-import VideoCard from "./VideoCard";
+import SuggestionVideoList from "./SuggestionVideoList";
+import SuggestionVideoSection from "./SuggestionVideoSection";
 import VideoContent from "./VideoContent";
+import VideoHomePage from "./VideoHomePage";
 import VideoPage from "./VideoPage";
-import WatchSection from "./WatchSection";
+import VideoWatchPagePlaylist from "./VideoWatchPagePlaylist";
+import VideoWatchPageSuggestion from "./VideoWatchPageSuggestion";
+import VideoWrapper from "./VideoWrapper";
+import WatchPage from "./WatchPage";
 
 export {
   Body,
@@ -55,11 +57,13 @@ export {
   SidebarLarge,
   SidebarSmall,
   SubscribeButton,
-  SuggestedVideoCard,
-  SuggestedVideoList,
-  SuggestedVideoSection,
-  VideoCard,
+  SuggestionVideoList,
+  SuggestionVideoSection,
   VideoContent,
+  VideoHomePage,
   VideoPage,
-  WatchSection,
+  VideoWatchPagePlaylist,
+  VideoWatchPageSuggestion,
+  VideoWrapper,
+  WatchPage,
 };

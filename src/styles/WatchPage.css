@@ -1,4 +1,4 @@
-.watch-section {
+.watch-page {
   background-color: var(--bg-clr);
   color: var(--text-clr);
   display: flex;
@@ -8,7 +8,7 @@
   padding: 2rem;
 }
 
-.watch-section .video-section {
+.watch-page .video-section {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -17,7 +17,7 @@
   margin-right: 2rem;
 }
 
-.watch-section .video-section .video-stream {
+.watch-page .video-section .video-stream {
   border-radius: 1.2rem;
   box-shadow: 0px 0px 300px 60px rgba(255, 255, 255, 0.275);
   height: 38vw;
@@ -27,38 +27,38 @@
   user-select: none;
 }
 
-.watch-section .video-section .video-stream iframe {
+.watch-page .video-section .video-stream iframe {
   border: none;
   border-radius: inherit;
   height: 100%;
   width: 100%;
 }
 
-.watch-section .video-section .video-title {
+.watch-page .video-section .video-title {
   font-size: 2rem;
   font-weight: 500;
   margin-bottom: 1.2rem;
   width: 100%;
 }
 
-.watch-section .video-section .video-info {
+.watch-page .video-section .video-info {
   display: flex;
   margin-bottom: 1.6rem;
   width: 100%;
 }
 
-.watch-section .video-section .video-info .channel-section {
+.watch-page .video-section .video-info .channel-section {
   display: flex;
   align-items: center;
   flex-grow: 4;
 }
 
-.watch-section .video-section .video-info .channel-section .channel-info {
+.watch-page .video-section .video-info .channel-section .channel-info {
   display: flex;
   margin-right: 2.8rem;
 }
 
-.watch-section .video-section .video-info .channel-section .channel-image {
+.watch-page .video-section .video-info .channel-section .channel-image {
   background-color: var(--btn-bg);
   border-radius: 10rem;
   height: 40px;
@@ -66,7 +66,7 @@
   margin-right: 1.4rem;
 }
 
-.watch-section .video-section .video-info .channel-section .channel-image img {
+.watch-page .video-section .video-info .channel-section .channel-image img {
   border-radius: inherit;
   height: 100%;
   width: 100%;
@@ -74,29 +74,29 @@
   object-position: center;
 }
 
-.watch-section .video-section .video-info .channel-section .channel-data h2 {
+.watch-page .video-section .video-info .channel-section .channel-data h2 {
   font-size: 1.6rem;
   font-weight: 500;
   margin-bottom: 0.4rem;
 }
 
-.watch-section .video-section .video-info .channel-section .channel-data p {
+.watch-page .video-section .video-info .channel-section .channel-data p {
   color: var(--text-light);
   font-size: 1.2rem;
 }
 
-.watch-section .video-section .video-info .video-options {
+.watch-page .video-section .video-info .video-options {
   display: flex;
   flex-grow: 1;
   justify-content: flex-end;
   margin-top: 1rem;
 }
 
-.watch-section .video-section .video-info .video-options > div {
+.watch-page .video-section .video-info .video-options > div {
   display: flex;
 }
 
-.watch-section .video-section .video-info .video-options .option-btn {
+.watch-page .video-section .video-info .video-options .option-btn {
   background-color: var(--btn-bg);
   border-radius: 10rem;
   display: flex;
@@ -110,29 +110,29 @@
   user-select: none;
 }
 
-.watch-section .video-section .video-info .video-options .option-btn:hover {
+.watch-page .video-section .video-info .video-options .option-btn:hover {
   background-color: var(--btn-bg-hover);
 }
 
-.watch-section .video-section .video-info .video-options .option-btn svg {
+.watch-page .video-section .video-info .video-options .option-btn svg {
   margin-right: 0.8rem;
 }
 
-.watch-section .video-section .video-info .video-options .like-btn {
+.watch-page .video-section .video-info .video-options .like-btn {
   border-right: 1px solid var(--btn-bg-hover);
   border-radius: 10rem 0 0 10rem;
   margin-right: 0;
 }
 
-.watch-section .video-section .video-info .video-options .dislike-btn {
+.watch-page .video-section .video-info .video-options .dislike-btn {
   border-radius: 0 10rem 10rem 0;
 }
 
-.watch-section .video-section .video-info .video-options .more-btn svg {
+.watch-page .video-section .video-info .video-options .more-btn svg {
   margin-right: 0;
 }
 
-.watch-section .video-section .video-description {
+.watch-page .video-section .video-description {
   background-color: var(--btn-bg);
   border-radius: 1.2rem;
   font-size: 1.4rem;
@@ -144,7 +144,7 @@
   position: relative;
 }
 
-.watch-section .video-section .video-description .more-btn {
+.watch-page .video-section .video-description .more-btn {
   background-color: var(--btn-bg);
   border: none;
   color: var(--text-clr);
@@ -157,48 +157,49 @@
   right: 0;
 }
 
-.watch-section .video-section .video-description .video-stats {
+.watch-page .video-section .video-description .video-stats {
   display: flex;
   margin-bottom: 0.4rem;
 }
 
-.watch-section .video-section .video-description .video-stats p {
+.watch-page .video-section .video-description .video-stats p {
   font-weight: 500;
   margin-right: 1rem;
 }
 
-.watch-section .video-section .video-description pre {
+.watch-page .video-section .video-description pre {
   white-space: pre-wrap;
 }
 
 @media (max-width: 1400px) {
-  .watch-section .video-section .video-info {
+  .watch-page .video-section .video-info {
     flex-direction: column;
     align-items: flex-start;
   }
 }
 
 @media (max-width: 1050px) {
-  .watch-section .video-section .video-info .video-options .option-btn {
+  .watch-page .video-section .video-info .video-options .option-btn {
     padding: 0 1rem;
   }
 }
 
 @media (max-width: 1020px) {
-  .watch-section {
+  .watch-page {
     flex-direction: column;
   }
-  .watch-section .video-section {
+  .watch-page .video-section {
     width: 90%;
     min-width: unset;
+    margin-right: 0;
   }
-  .watch-section .video-section .video-stream {
+  .watch-page .video-section .video-stream {
     height: 49vw;
   }
 }
 
 @media (max-width: 900px) {
-  .watch-section .video-section .video-info .channel-section {
+  .watch-page .video-section .video-info .channel-section {
     justify-content: space-between;
     padding: 0 1rem;
     width: 100%;
@@ -206,57 +207,64 @@
 }
 
 @media (max-width: 600px) {
-  .watch-section .video-section {
+  .watch-page .video-section {
     width: 100%;
   }
-  .watch-section .video-section .video-stream {
+  .watch-page .video-section .video-stream {
     height: 53vw;
   }
 
-  .watch-section .video-section .video-title {
+  .watch-page .video-section .video-title {
     font-size: 1.8rem;
   }
-  .watch-section .video-section .video-info .video-options .option-btn {
+  .watch-page .video-section .video-info .video-options .option-btn {
     display: flex;
   }
-  .watch-section .video-section .video-info .video-options .option-btn svg {
+  .watch-page .video-section .video-info .video-options .option-btn svg {
     width: 16px;
   }
 }
 
+@media (max-width: 500px) {
+  .watch-page .video-section .video-description {
+    max-width: 90vw;
+    margin: 0;
+  }
+}
+
 @media (max-width: 400px) {
-  .watch-section {
+  .watch-page {
     padding: 0;
   }
-  .watch-section .video-section .video-stream {
+  .watch-page .video-section .video-stream {
     border-radius: 0;
     height: 56vw;
   }
-  .watch-section .video-section .video-title {
+  .watch-page .video-section .video-title {
     padding-inline: 1rem;
   }
-  .watch-section .video-section .video-info {
+  .watch-page .video-section .video-info {
     padding-inline: 1rem;
   }
-  .watch-section .video-section .video-description {
-    width: 94vw;
+  .watch-page .video-section .video-description {
+    max-width: 94vw;
     margin: auto;
     margin-bottom: 2rem;
   }
 }
 
 @media (max-width: 385px) {
-  .watch-section .video-section .video-info .video-options .download-btn {
+  .watch-page .video-section .video-info .video-options .download-btn {
     display: none;
   }
 }
 
 @media (max-width: 300px) {
-  .watch-section .video-section .video-info .channel-section {
+  .watch-page .video-section .video-info .channel-section {
     flex-direction: column;
     align-items: flex-start;
   }
-  .watch-section .video-section .video-info .channel-section .subscribe-btn {
+  .watch-page .video-section .video-info .channel-section .subscribe-btn {
     margin-top: 1rem;
   }
 }

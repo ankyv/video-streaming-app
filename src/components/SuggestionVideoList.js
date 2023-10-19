@@ -1,21 +1,22 @@
 import useVideoList from "../utils/useVideoList";
-import { SuggestedVideoCard } from "./index";
 import { Link } from "react-router-dom";
+import { VideoWatchPageSuggestion } from "./index";
+import "../styles/SuggestionVideoList.css";
 
-const SuggestedVideoList = () => {
+const SuggestionVideoList = () => {
   const videoList = useVideoList();
 
   if (!videoList) return null;
 
   return (
-    <div className="suggested-video-list">
+    <div className="suggestion-video-list">
       {videoList?.map((video) => (
         <Link to={"/watch/" + video?.id} key={video?.id}>
-          <SuggestedVideoCard video={video} />
+          <VideoWatchPageSuggestion video={video} />
         </Link>
       ))}
     </div>
   );
 };
 
-export default SuggestedVideoList;
+export default SuggestionVideoList;

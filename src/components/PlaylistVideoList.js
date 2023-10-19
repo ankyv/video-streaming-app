@@ -1,13 +1,22 @@
 import usePlaylistItems from "../utils/usePlaylistItems";
-import { SuggestedVideoCard } from "./index";
+import { Link } from "react-router-dom";
+import { VideoWatchPagePlaylist } from "./index";
+import "../styles/PlaylistVideoList.css";
 
 const PlaylistVideoList = ({ playlistId }) => {
   const playlistItems = usePlaylistItems(playlistId);
 
+  if (!playlistItems) return null;
+
   return (
     <div className="playlist-video-list">
       {playlistItems?.map((video) => (
-        <SuggestedVideoCard key={video?.id} video={video} />
+        <Link
+          to={"/watch/" + video?.contentDetails?.videoId + "/" + playlistId}
+          key={video?.id}
+        >
+          <VideoWatchPagePlaylist video={video} />
+        </Link>
       ))}
     </div>
   );

@@ -7,7 +7,7 @@ import {
   Header,
   Body,
   ChannelPage,
-  WatchSection,
+  WatchPage,
   Main,
   VideoPage,
   ResultSection,
@@ -49,11 +49,11 @@ const appRouter = createBrowserRouter([
           },
           {
             path: "/watch/:id",
-            element: <WatchSection />,
+            element: <WatchPage />,
           },
           {
             path: "/watch/:id/:playlistId",
-            element: <WatchSection />,
+            element: <WatchPage />,
           },
           {
             path: "/playlist/:id",

@@ -5,10 +5,10 @@ import {
   getCount,
 } from "../utils/helper";
 import useChannelData from "../utils/useChannelData";
-import VideoWrapper from "./VideoWrapper";
-import "../styles/SuggestedVideoCard.css";
+import { VideoWrapper } from "./index";
+import "../styles/VideoWatchPageSuggestion.css";
 
-const SuggestedVideoCard = ({ video }) => {
+const VideoWatchPageSuggestion = ({ video }) => {
   const id = video?.id; // string
   const caption = video?.contentDetails?.caption; // string(boolean)
   const duration = getDuration(video?.contentDetails?.duration); // string
@@ -31,7 +31,7 @@ const SuggestedVideoCard = ({ video }) => {
   if (!channelThumbnailSrc) return null;
 
   return (
-    <div className="suggested-video-card">
+    <div className="video-watch-page">
       <VideoWrapper
         id={id}
         thumbnailSrc={thumbnailSrc}
@@ -47,4 +47,4 @@ const SuggestedVideoCard = ({ video }) => {
   );
 };
 
-export default SuggestedVideoCard;
+export default VideoWatchPageSuggestion;
