@@ -9,7 +9,7 @@ import {
   ChannelPage,
   WatchSection,
   Main,
-  VideoSection,
+  VideoPage,
   ResultSection,
   SearchPage,
   PlaylistPage,
@@ -39,7 +39,7 @@ const appRouter = createBrowserRouter([
             children: [
               {
                 path: "/",
-                element: <VideoSection />,
+                element: <VideoPage />,
               },
               {
                 path: "/results/:searchQuery",

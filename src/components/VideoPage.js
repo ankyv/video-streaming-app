@@ -4,9 +4,9 @@ import "dotenv/config";
 import { Link } from "react-router-dom";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { ShimmerSection, VideoCard } from "./index";
-import "../styles/VideoSection.css";
+import "../styles/VideoPage.css";
 
-const VideoSection = () => {
+const VideoPage = () => {
   const [videoList, setVideoList] = useState([]);
   const [pageToken, setPageToken] = useState("");
 
@@ -52,4 +52,4 @@ const VideoSection = () => {
   );
 };
 
-export default VideoSection;
+export default VideoPage;

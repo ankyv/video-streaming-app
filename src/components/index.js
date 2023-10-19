@@ -27,7 +27,7 @@ import SuggestedVideoList from "./SuggestedVideoList";
 import SuggestedVideoSection from "./SuggestedVideoSection";
 import VideoCard from "./VideoCard";
 import VideoContent from "./VideoContent";
-import VideoSection from "./VideoSection";
+import VideoPage from "./VideoPage";
 import WatchSection from "./WatchSection";
 
 export {
@@ -60,6 +60,6 @@ export {
   SuggestedVideoSection,
   VideoCard,
   VideoContent,
-  VideoSection,
+  VideoPage,
   WatchSection,
 };
