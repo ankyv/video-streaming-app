@@ -12,8 +12,12 @@
   padding: 0.6rem 0;
 }
 
-.playlist-video-list a:hover {
+.playlist-video-list a.active {
   background-color: var(--btn-bg-hover);
+}
+
+.playlist-video-list a:hover {
+  background-color: var(--btn-bg);
   border-radius: 1.2rem 0 0 1.2rem;
 }
 
