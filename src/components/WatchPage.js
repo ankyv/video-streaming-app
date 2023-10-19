@@ -226,7 +226,10 @@ const WatchPage = () => {
         </div>
         <CommentSection id={id} commentCount={commentCount} />
       </div>
-      <SuggestionVideoSection playlistId={playlistId} />
+      <SuggestionVideoSection
+        channelTitle={channelTitle}
+        playlistId={playlistId}
+      />
     </div>
   );
 };

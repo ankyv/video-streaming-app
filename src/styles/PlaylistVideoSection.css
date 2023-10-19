@@ -1,0 +1,22 @@
+.playlist-video-section {
+  background-color: var(--bg-clr);
+  border: 1px solid var(--border-clr);
+  border-radius: 1.2rem;
+  margin-bottom: 4rem;
+}
+
+.playlist-video-section .playlist-details {
+  border-radius: inherit;
+  padding: 1.4rem 1.4rem 1rem;
+}
+
+.playlist-video-section .playlist-details h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.playlist-video-section .playlist-details p {
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+}

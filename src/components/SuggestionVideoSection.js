@@ -1,14 +1,11 @@
-import { PlaylistVideoList, SuggestionVideoList } from "./index";
+import { PlaylistVideoSection, SuggestionVideoList } from "./index";
 import "../styles/SuggestionVideoSection.css";
 
-const SuggestionVideoSection = ({ playlistId }) => {
+const SuggestionVideoSection = (props) => {
   return (
     <div className="suggestion-video-section">
-      {playlistId ? (
-        <PlaylistVideoList playlistId={playlistId} />
-      ) : (
-        <SuggestionVideoList />
-      )}
+      {props.playlistId && <PlaylistVideoSection {...props} />}
+      <SuggestionVideoList />
     </div>
   );
 };

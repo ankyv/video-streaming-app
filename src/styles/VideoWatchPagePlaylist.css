@@ -1,0 +1,151 @@
+.video-watch-page-playlist {
+  border-radius: inherit;
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  user-select: none;
+}
+
+.video-watch-page-playlist .video-thumbnail {
+  width: 170px;
+  height: 95px;
+  margin-right: 0.8rem;
+  position: relative;
+  user-select: none;
+}
+
+.video-watch-page-playlist .video-thumbnail .video-thumbnail-image {
+  border-radius: 1.2rem;
+  height: 100%;
+  width: 100%;
+}
+
+.video-watch-page-playlist .video-thumbnail .video-thumbnail-image img {
+  border-radius: inherit;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.video-watch-page-playlist .video-thumbnail .video-timestamp {
+  background-color: #282828;
+  border-radius: 0.4rem;
+  color: #fff;
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+}
+
+.video-watch-page-playlist .video-thumbnail .video-timestamp p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 0.2rem 0.4rem;
+}
+
+.video-watch-page-playlist .video-details {
+  display: flex;
+  width: calc(100% - 170px);
+}
+
+.video-watch-page-playlist .video-details .channel-thumbnail {
+  display: none;
+}
+
+.video-watch-page-playlist .video-details .video-info .video-title {
+  max-height: 4.2rem;
+  margin-bottom: 0.2rem;
+  overflow: hidden;
+}
+
+.video-watch-page-playlist .video-details .video-info .video-title h1 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 2.1rem;
+}
+
+.video-watch-page-playlist .video-details .video-info .channel-title {
+  color: var(--text-light);
+  font-size: 1.2rem;
+  letter-spacing: 0.4px;
+  margin-bottom: 0.2rem;
+}
+
+.video-watch-page-playlist
+  .video-details
+  .video-info
+  .video-stats
+  p:first-of-type,
+.video-watch-page-playlist
+  .video-details
+  .video-info
+  .video-stats
+  span:first-of-type {
+  display: none;
+}
+
+.video-watch-page-playlist .video-details .video-info .video-stats {
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+}
+
+.video-watch-page-playlist .video-details .video-info .video-stats p {
+  font-size: 1.2rem;
+}
+
+.video-watch-page-playlist .video-details .video-info .video-stats .interpunct {
+  font-weight: 600;
+  margin: 0 0.4rem;
+}
+
+.video-watch-page-playlist .video-details .video-info .channel-info {
+  display: none;
+}
+
+.video-watch-page-playlist .video-details .video-info .video-description {
+  display: none;
+}
+
+@media (max-width: 1300px) {
+  .video-watch-page-playlist .video-thumbnail {
+    width: 130px;
+    height: 72px;
+  }
+  .video-watch-page-playlist .video-details {
+    width: calc(100% - 130px);
+  }
+}
+
+@media (max-width: 1020px) {
+  .video-watch-page-playlist .video-thumbnail {
+    width: 170px;
+    height: 95px;
+  }
+  .video-watch-page-playlist .video-details {
+    width: calc(100% - 170px);
+  }
+}
+
+@media (max-width: 500px) {
+  .video-watch-page-playlist .video-thumbnail {
+    width: 130px;
+    height: 72px;
+  }
+  .video-watch-page-playlist .video-details {
+    width: calc(100% - 130px);
+  }
+}
+
+@media (max-width: 430px) {
+  .video-watch-page-playlist {
+    flex-direction: column;
+  }
+  .video-watch-page-playlist .video-thumbnail {
+    width: 100%;
+    height: 45vw;
+  }
+  .video-watch-page-playlist .video-details {
+    width: 100%;
+  }
+}

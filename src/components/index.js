@@ -11,6 +11,7 @@ import PlaylistContent from "./PlaylistContent";
 import PlaylistPage from "./PlaylistPage";
 import PlaylistVideoCard from "./PlaylistVideoCard";
 import PlaylistVideoList from "./PlaylistVideoList";
+import PlaylistVideoSection from "./PlaylistVideoSection";
 import RecentLinks from "./RecentLinks";
 import ResultSection from "./ResultSection";
 import SearchContainer from "./SearchContainer";
@@ -46,6 +47,7 @@ export {
   PlaylistPage,
   PlaylistVideoCard,
   PlaylistVideoList,
+  PlaylistVideoSection,
   RecentLinks,
   ResultSection,
   SearchContainer,

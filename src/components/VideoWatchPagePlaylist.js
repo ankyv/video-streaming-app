@@ -1,7 +1,7 @@
 import useChannelData from "../utils/useChannelData";
 import useVideoData from "../utils/useVideoData";
 import { VideoWrapper } from "./index";
-import "../styles/VideoWatchPageSuggestion.css";
+import "../styles/VideoWatchPagePlaylist.css";
 
 const VideoWatchPagePlaylist = ({ video }) => {
   const videoId = video?.contentDetails?.videoId;
@@ -21,7 +21,7 @@ const VideoWatchPagePlaylist = ({ video }) => {
   if (!channelThumbnailSrc) return null;
 
   return (
-    <div className="video-watch-page">
+    <div className="video-watch-page-playlist">
       <VideoWrapper
         id={videoId}
         thumbnailSrc={thumbnailSrc}

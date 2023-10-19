@@ -1,3 +1,27 @@
 .playlist-video-list {
   width: 100%;
+  height: 65vh;
+  padding-top: 1rem;
+  overflow: auto;
+}
+
+.playlist-video-list a {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0.6rem 0;
+}
+
+.playlist-video-list a:hover {
+  background-color: var(--btn-bg-hover);
+  border-radius: 1.2rem 0 0 1.2rem;
+}
+
+.playlist-video-list a .index {
+  width: 25px;
+}
+
+.playlist-video-list a .index p {
+  font-size: 1.2rem;
+  text-align: center;
 }

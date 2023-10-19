@@ -10,11 +10,14 @@ const PlaylistVideoList = ({ playlistId }) => {
 
   return (
     <div className="playlist-video-list">
-      {playlistItems?.map((video) => (
+      {playlistItems?.map((video, index) => (
         <Link
           to={"/watch/" + video?.contentDetails?.videoId + "/" + playlistId}
           key={video?.id}
         >
+          <div className="index">
+            <p>{index + 1}</p>
+          </div>
           <VideoWatchPagePlaylist video={video} />
         </Link>
       ))}
