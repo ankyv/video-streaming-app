@@ -1,6 +1,7 @@
 .sidebar-small {
   background-color: var(--bg-clr);
   display: inline-block;
+  width: 80px;
   padding-left: 0.4rem;
   user-select: none;
   position: sticky;

@@ -1,33 +1,79 @@
 .recent-links {
   background-color: var(--bg-clr);
   height: 60px;
-  overflow: hidden;
+  width: 100%;
   position: sticky;
   top: 60px;
   z-index: 1;
 }
 
-.recent-link {
-  background-color: var(--btn-bg);
-  border-radius: 0.8rem;
-  display: inline-block;
-  padding: 0.8rem 1rem;
-  margin: 1.2rem 1.2rem 1.2rem 0;
-  cursor: pointer;
+.wrapper {
+  display: flex;
+  align-items: center;
+  max-width: 1500px;
+  width: 100%;
+  padding: 1rem 2rem;
+  position: relative;
+  overflow: hidden;
   user-select: none;
 }
 
-.recent-link:hover {
+.wrapper .icon {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 80px;
+  position: absolute;
+  top: 0;
+}
+
+.icon:first-child {
+  background: linear-gradient(90deg, var(--bg-clr) 70%, transparent);
+  left: 0;
+}
+
+.icon:last-child {
+  background: linear-gradient(-90deg, var(--bg-clr) 70%, transparent);
+  justify-content: flex-end;
+  right: 0;
+}
+
+.icon span {
+  border-radius: 50%;
+  font-size: 2.2rem;
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.icon span:hover {
   background-color: var(--btn-bg-hover);
 }
 
-.recent-link > p {
-  color: var(--text-clr);
-  font-size: 1.4rem;
+.icon:first-child span {
+  margin-left: 15px;
 }
 
-@media (max-width: 800px) {
-  .recent-links .recent-link:first-child {
-    margin-left: 1rem;
-  }
+.icon:last-child span {
+  margin-right: 15px;
+}
+
+.wrapper .tabs-box {
+  display: flex;
+  gap: 12px;
+  list-style: none;
+  overflow-x: hidden;
+  padding: 0 5rem;
+}
+
+.tabs-box .tab {
+  background-color: var(--btn-bg);
+  border: 1px solid var(--border-clr);
+  border-radius: 1rem;
+  font-size: 1.4rem;
+  padding: 0.6rem 1.6rem;
+  white-space: nowrap;
+  cursor: pointer;
 }
