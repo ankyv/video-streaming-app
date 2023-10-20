@@ -25,7 +25,11 @@ const PlaylistPage = () => {
         <div className="playlist-section-container">
           <Link
             to={
-              "/watch/" + playlistItems?.[0]?.contentDetails?.videoId + "/" + id
+              "/watch/" +
+              playlistItems?.[0]?.contentDetails?.videoId +
+              "/" +
+              id +
+              "/1"
             }
           >
             <div className="playlist-thumbnail">
@@ -47,7 +51,17 @@ const PlaylistPage = () => {
               <button></button>
             </div> */}
             <div className="play-buttons">
-              <button className="play-all-btn">Play all</button>
+              <Link
+                to={
+                  "/watch/" +
+                  playlistItems?.[0]?.contentDetails?.videoId +
+                  "/" +
+                  id +
+                  "/1"
+                }
+              >
+                <button className="play-all-btn">Play all</button>
+              </Link>
               {/* <button></button> */}
             </div>
           </div>
@@ -57,8 +71,17 @@ const PlaylistPage = () => {
         </div>
       </div>
       <div className="video-section">
-        {playlistItems?.map((video) => (
-          <Link key={video?.id} to={"/watch/" + video?.contentDetails?.videoId}>
+        {playlistItems?.map((video, index) => (
+          <Link
+            key={video?.id}
+            to={
+              "/watch/" +
+              video?.contentDetails?.videoId +
+              "/" +
+              id +
+              `/${index + 1}`
+            }
+          >
             <PlaylistVideoCard video={video} />
           </Link>
         ))}

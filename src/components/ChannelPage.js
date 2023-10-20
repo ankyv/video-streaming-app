@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import useChannelData from "../utils/useChannelData";
 import { SubscribeButton, PlaylistCard } from "./index";
 import useChannelPlaylist from "../utils/useChannelPlaylist";
@@ -44,7 +44,9 @@ const ChannelPage = () => {
       </div>
       <div className="playlist-details">
         {channelPlaylist?.map((playlist) => (
-          <PlaylistCard key={playlist?.id} playlist={playlist} />
+          <Link to={"/playlist/" + playlist?.id} key={playlist?.id}>
+            <PlaylistCard playlist={playlist} />
+          </Link>
         ))}
       </div>
     </div>

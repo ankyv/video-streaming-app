@@ -21,7 +21,7 @@ import {
 import "../styles/WatchPage.css";
 
 const WatchPage = () => {
-  const { id, playlistId } = useParams();
+  const { id, playlistId, index } = useParams();
 
   const [video, setVideo] = useState(null);
   const [channel, setChannel] = useState(null);
@@ -229,6 +229,7 @@ const WatchPage = () => {
       <SuggestionVideoSection
         channelTitle={channelTitle}
         playlistId={playlistId}
+        index={index}
       />
     </div>
   );

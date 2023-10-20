@@ -44,9 +44,23 @@ const ResultSection = () => {
       >
         {resultData.map((item, index) => {
           if (item?.id?.kind === "youtube#channel") {
-            return <ChannelContent key={item?.etag + index} channel={item} />;
+            return (
+              <Link
+                to={"/channel/" + item?.id?.channelId}
+                key={item?.etag + index}
+              >
+                <ChannelContent channel={item} />
+              </Link>
+            );
           } else if (item?.id?.kind === "youtube#playlist") {
-            return <PlaylistContent key={item?.etag + index} playlist={item} />;
+            return (
+              <Link
+                to={"/playlist/" + item?.id?.playlistId}
+                key={item?.etag + index}
+              >
+                <PlaylistContent playlist={item} />
+              </Link>
+            );
           } else if (item?.id?.kind === "youtube#video") {
             return (
               <Link key={item?.etag + index} to={"/watch/" + item?.id?.videoId}>

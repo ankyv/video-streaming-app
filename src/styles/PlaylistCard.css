@@ -60,6 +60,10 @@
   cursor: pointer;
 }
 
+.playlist-card .playlist-details .playlist-btn:hover {
+  color: var(--text-clr);
+}
+
 @media (max-width: 650px) {
   .playlist-card {
     width: 200px;
