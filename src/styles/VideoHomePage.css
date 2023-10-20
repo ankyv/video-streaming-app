@@ -42,6 +42,21 @@
   padding: 0.2rem 0.4rem;
 }
 
+.video-home-page .video-thumbnail .video-live {
+  background-color: #cc0000e6;
+  border-radius: 0.4rem;
+  color: #fff;
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+}
+
+.video-home-page .video-thumbnail .video-live p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.2rem 0.4rem;
+}
+
 .video-home-page .video-details {
   display: flex;
 }

@@ -17,9 +17,15 @@ const VideoWrapper = (props) => {
         <div className="video-thumbnail-image">
           <img src={thumbnailSrc} />
         </div>
-        <div className="video-timestamp">
-          <p>{duration}</p>
-        </div>
+        {duration ? (
+          <div className="video-timestamp">
+            <p>{duration}</p>
+          </div>
+        ) : (
+          <div className="video-live">
+            <p>LIVE</p>
+          </div>
+        )}
       </div>
       <div className="video-details">
         <div className="channel-thumbnail">
