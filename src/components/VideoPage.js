@@ -1,52 +1,18 @@
-import { useState, useEffect } from "react";
-import { API_DATA_URL } from "../constants";
-import "dotenv/config";
-import { Link } from "react-router-dom";
-import InfiniteScroll from "react-infinite-scroll-component";
-import { ShimmerSection, VideoHomePage } from "./index";
+import { useState } from "react";
+import { RecentLinks, VideoSection, VideoCategorySection } from "./index";
 import "../styles/VideoPage.css";
 
 const VideoPage = () => {
-  const [videoList, setVideoList] = useState([]);
-  const [pageToken, setPageToken] = useState("");
-
-  const API_URL =
-    API_DATA_URL +
-    process.env.API_KEY +
-    (pageToken && `&pageToken=${pageToken}`);
-
-  useEffect(() => {
-    getVideoList();
-  }, []);
-
-  async function getVideoList() {
-    const response = await fetch(API_URL);
-    const json = await response.json();
-    setVideoList([...videoList, ...json?.items]);
-    json?.nextPageToken ? setPageToken(json?.nextPageToken) : setPageToken("");
-  }
-
-  if (!videoList.length) return <ShimmerSection />;
+  const [link, setLink] = useState("all");
 
   return (
     <div className="video-page">
-      <InfiniteScroll
-        dataLength={videoList.length}
-        next={() => {
-          getVideoList();
+      <RecentLinks
+        handleClick={(value) => {
+          setLink(value);
         }}
-        hasMore={pageToken}
-        loader={<ShimmerSection />}
-        className="video-page"
-      >
-        {videoList.map((video) => {
-          return (
-            <Link to={"/watch/" + video?.id} key={video?.id}>
-              <VideoHomePage video={video} />
-            </Link>
-          );
-        })}
-      </InfiniteScroll>
+      />
+      {link === "all" ? <VideoSection /> : <VideoCategorySection link={link} />}
     </div>
   );
 };

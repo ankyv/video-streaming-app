@@ -1,6 +1,6 @@
 import "../styles/RecentLinks.css";
 
-const RecentLinks = () => {
+const RecentLinks = ({ handleClick }) => {
   const links = [
     "All",
     "Music",
@@ -22,7 +22,13 @@ const RecentLinks = () => {
     <div className="recent-links">
       {links.map((linkText) => {
         return (
-          <div key={linkText} className="recent-link">
+          <div
+            key={linkText}
+            className="recent-link"
+            onClick={() => {
+              handleClick(linkText.toLowerCase());
+            }}
+          >
             <p>{linkText}</p>
           </div>
         );

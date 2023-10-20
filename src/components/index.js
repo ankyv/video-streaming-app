@@ -25,9 +25,12 @@ import SidebarSmall from "./SidebarSmall";
 import SubscribeButton from "./SubscribeButton";
 import SuggestionVideoList from "./SuggestionVideoList";
 import SuggestionVideoSection from "./SuggestionVideoSection";
+import VideoCategorySection from "./VideoCategorySection";
 import VideoContent from "./VideoContent";
 import VideoHomePage from "./VideoHomePage";
+import VideoHomePageCategory from "./VideoHomePageCategory";
 import VideoPage from "./VideoPage";
+import VideoSection from "./VideoSection";
 import VideoWatchPagePlaylist from "./VideoWatchPagePlaylist";
 import VideoWatchPageSuggestion from "./VideoWatchPageSuggestion";
 import VideoWrapper from "./VideoWrapper";
@@ -61,9 +64,12 @@ export {
   SubscribeButton,
   SuggestionVideoList,
   SuggestionVideoSection,
+  VideoCategorySection,
   VideoContent,
   VideoHomePage,
+  VideoHomePageCategory,
   VideoPage,
+  VideoSection,
   VideoWatchPagePlaylist,
   VideoWatchPageSuggestion,
   VideoWrapper,
