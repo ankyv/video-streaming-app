@@ -1,4 +1,5 @@
 import { getThumbnailSrc } from "../utils/helper";
+import "../styles/PlaylistCard.css";
 
 const PlaylistCard = ({ playlist }) => {
   const videoCount = playlist?.contentDetails?.itemCount;
@@ -17,12 +18,14 @@ const PlaylistCard = ({ playlist }) => {
           <img src={thumbnailSrc} />
         </div>
         <div className="playlist-video-banner">
-          <p>{videoCount} videos</p>
+          <p>
+            {videoCount} {videoCount > 1 ? "videos" : "video"}
+          </p>
         </div>
       </div>
       <div className="playlist-details">
         <h2 className="playlist-title">{title}</h2>
-        <button>View full playlist</button>
+        <button className="playlist-btn">View full playlist</button>
       </div>
     </div>
   );

@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import useChannelData from "../utils/useChannelData";
 import { SubscribeButton, PlaylistCard } from "./index";
 import useChannelPlaylist from "../utils/useChannelPlaylist";
+import "../styles/ChannelPage.css";
 
 const ChannelPage = () => {
   const { channelId } = useParams();

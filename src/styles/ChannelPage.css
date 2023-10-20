@@ -1,0 +1,112 @@
+.channel-page {
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+}
+
+.channel-page .channel-details {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  padding-top: 4rem;
+  width: 100%;
+}
+
+.channel-page .channel-details .channel-thumbnail {
+  width: 200px;
+}
+
+.channel-page .channel-details .channel-thumbnail .channel-thumbnail-image {
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  margin: auto;
+}
+
+.channel-page .channel-details .channel-thumbnail .channel-thumbnail-image img {
+  border-radius: inherit;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.channel-page .channel-details .channel-info {
+  width: calc(100% - 400px);
+  padding: 0 2rem;
+}
+
+.channel-page .channel-details .channel-info h1 {
+  font-size: 2.4rem;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+
+.channel-page .channel-details .channel-info .channel-stats {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.channel-page .channel-details .channel-info .channel-stats p {
+  font-size: 1.4rem;
+}
+
+.channel-page .channel-details .channel-info .channel-stats p:first-child {
+  color: var(--text-light);
+  font-weight: 600;
+}
+
+.channel-page .channel-details .channel-info .channel-description {
+  font-size: 1.4rem;
+  height: 85px;
+  overflow: auto;
+}
+
+.channel-page > .playlist-details {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 4rem 1rem;
+}
+
+@media (max-width: 1000px) {
+  .channel-page .channel-details {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2rem;
+  }
+  .channel-page .channel-details .channel-thumbnail {
+    margin-bottom: 1rem;
+  }
+  .channel-page .channel-details .channel-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    width: 90%;
+  }
+}
+
+@media (max-width: 430px) {
+  .channel-page .channel-details .channel-thumbnail {
+    width: unset;
+  }
+
+  .channel-page .channel-details .channel-thumbnail .channel-thumbnail-image {
+    height: 100px;
+    width: 100px;
+  }
+  .channel-page .channel-details .channel-info .channel-stats {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .channel-page .channel-details .channel-info .channel-description {
+    display: none;
+  }
+
+  .channel-page > .playlist-details {
+    padding: 2rem 0;
+  }
+}
