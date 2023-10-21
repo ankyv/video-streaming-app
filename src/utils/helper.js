@@ -1,3 +1,5 @@
+import { nameList, messageList } from "../constants";
+
 export const getThumbnailSrc = (thumbnails) => {
   if (thumbnails?.maxres?.url) {
     return thumbnails?.maxres?.url;
@@ -147,3 +149,11 @@ export const getPublishTime = (publishTime) => {
 
   return publishTimeString;
 };
+
+export function generateRandomName() {
+  return nameList[Math.floor(Math.random() * nameList.length)];
+}
+
+export function generateRandomMessage() {
+  return messageList[Math.floor(Math.random() * messageList.length)];
+}

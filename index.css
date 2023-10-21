@@ -47,7 +47,16 @@ body {
 
 a {
   color: var(--text-clr);
+  font-family: "Poppins", sans-serif;
   text-decoration: none;
+}
+
+input {
+  font-family: "Poppins", sans-serif;
+}
+
+button {
+  font-family: "Poppins", sans-serif;
 }
 
 /* ------------------------ MediaQuery Styles ------------------------ */

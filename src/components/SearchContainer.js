@@ -26,7 +26,12 @@ const SearchContainer = () => {
   }
 
   return (
-    <div className="search-container">
+    <form
+      className="search-container"
+      onSubmit={(e) => {
+        e.preventDefault();
+      }}
+    >
       <input
         type="text"
         placeholder="Search"
@@ -65,7 +70,7 @@ const SearchContainer = () => {
           })}
         </div>
       )}
-    </div>
+    </form>
   );
 };
 

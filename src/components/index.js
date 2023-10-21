@@ -6,6 +6,9 @@ import CommentReplies from "./CommentReplies";
 import CommentSection from "./CommentSection";
 import ExplorePage from "./ExplorePage";
 import Header from "./Header";
+import LiveChatContainer from "./LiveChatContainer";
+import LiveChatMessage from "./LiveChatMessage";
+import LiveChatSection from "./LiveChatSection";
 import Main from "./Main";
 import PlaylistCard from "./PlaylistCard";
 import PlaylistContent from "./PlaylistContent";
@@ -46,6 +49,9 @@ export {
   CommentSection,
   ExplorePage,
   Header,
+  LiveChatContainer,
+  LiveChatMessage,
+  LiveChatSection,
   Main,
   PlaylistCard,
   PlaylistContent,

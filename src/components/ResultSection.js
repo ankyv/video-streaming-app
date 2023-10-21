@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useParams } from "react-router-dom";
 import InfiniteScroll from "react-infinite-scroll-component";
 import {
@@ -13,21 +13,32 @@ const ResultSection = () => {
   let { searchQuery } = useParams();
   searchQuery = searchQuery.replace(" ", "%20");
 
+  let prevSearchQuery = useRef("");
+
   const [resultData, setResultData] = useState([]);
   const [pageToken, setPageToken] = useState("");
 
+  const nextPageToken =
+    searchQuery === prevSearchQuery.current ? pageToken : "";
+
   const API_URL =
     `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=${searchQuery}&key=${process.env.API_KEY}` +
-    (pageToken && `&pageToken=${pageToken}`);
+    (nextPageToken && `&pageToken=${nextPageToken}`);
 
   useEffect(() => {
     getSearchResult();
-  }, []);
+  }, [searchQuery]);
+
+  useEffect(() => {
+    prevSearchQuery.current = searchQuery;
+  }, [resultData]);
 
   async function getSearchResult() {
     const response = await fetch(API_URL);
     const json = await response.json();
-    setResultData([...resultData, ...json?.items]);
+    prevSearchQuery.current === searchQuery
+      ? setResultData([...resultData, ...json?.items])
+      : setResultData([...json?.items]);
     json?.nextPageToken ? setPageToken(json?.nextPageToken) : setPageToken("");
   }
 

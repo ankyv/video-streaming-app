@@ -1,6 +1,7 @@
 .suggestion-video-section {
   width: 30%;
   min-width: 280px;
+  padding-top: 1.4rem;
 }
 
 @media (max-width: 1020px) {
