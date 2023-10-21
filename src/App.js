@@ -7,6 +7,7 @@ import {
   Header,
   Body,
   ChannelPage,
+  ExplorePage,
   WatchPage,
   Main,
   VideoPage,
@@ -62,6 +63,10 @@ const appRouter = createBrowserRouter([
           {
             path: "/channel/:channelId",
             element: <ChannelPage />,
+          },
+          {
+            path: "/explore/:categoryId",
+            element: <ExplorePage />,
           },
         ],
       },

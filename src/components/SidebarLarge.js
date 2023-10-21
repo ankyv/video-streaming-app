@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {
   HistoryIcon,
   HomeIcon,
@@ -7,9 +8,12 @@ import {
   SubscriptionsIcon,
   WatchLaterIcon,
 } from "../icons";
+import useVideoCategoryList from "../utils/useVideoCategoryList";
 import "../styles/SidebarLarge.css";
 
 const SidebarLarge = () => {
+  const videoCategories = useVideoCategoryList();
+
   return (
     <div className="sidebar-large">
       <div className="sidebar-section">
@@ -43,6 +47,19 @@ const SidebarLarge = () => {
           <LikeIcon color={"var(--text-clr)"} size={24} />
           <p>Liked videos</p>
         </div>
+      </div>
+      <div className="sidebar-section">
+        <h3>Explore</h3>
+        {videoCategories?.map((category) => {
+          return (
+            <Link key={category?.etag} to={"/explore/" + category?.id}>
+              <div>
+                {/* <LikeIcon color={"var(--text-clr)"} size={24} /> */}
+                <p>{category?.snippet?.title}</p>
+              </div>
+            </Link>
+          );
+        })}
       </div>
     </div>
   );

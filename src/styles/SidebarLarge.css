@@ -2,7 +2,7 @@
   background-color: var(--bg-clr);
   display: inline-block;
   height: calc(100vh - 60px);
-  width: 280px;
+  width: 290px;
   padding-left: 1rem;
   padding-right: 2rem;
   position: fixed;
@@ -16,6 +16,12 @@
 .sidebar-large .sidebar-section {
   border-bottom: 1px solid var(--btn-bg-hover);
   padding: 1rem 0;
+}
+
+.sidebar-large .sidebar-section > h3 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  padding: 1rem 0 0.6rem 2rem;
 }
 
 .sidebar-large .sidebar-section > div {
@@ -35,6 +41,25 @@
 }
 
 .sidebar-large .sidebar-section > div > p {
+  color: var(--text-clr);
+  font-size: 1.4rem;
+  margin-left: 2.6rem;
+  margin-top: 0.2rem;
+}
+
+.sidebar-large .sidebar-section > a {
+  border-radius: 1.2rem;
+  display: flex;
+  align-items: center;
+  padding: 0.9rem 8rem 0.8rem 2rem;
+  cursor: pointer;
+}
+
+.sidebar-large .sidebar-section > a:hover {
+  background-color: var(--btn-bg);
+}
+
+.sidebar-large .sidebar-section > a p {
   color: var(--text-clr);
   font-size: 1.4rem;
   margin-left: 2.6rem;
