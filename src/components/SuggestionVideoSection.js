@@ -10,7 +10,7 @@ const SuggestionVideoSection = (props) => {
     <div className="suggestion-video-section">
       <LiveChatContainer />
       {props.playlistId && <PlaylistVideoSection {...props} />}
-      <SuggestionVideoList />
+      <SuggestionVideoList searchQuery={props.searchQuery} />
     </div>
   );
 };

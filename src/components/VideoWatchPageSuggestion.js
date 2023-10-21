@@ -1,30 +1,20 @@
-import {
-  getDuration,
-  getPublishTime,
-  getThumbnailSrc,
-  getCount,
-} from "../utils/helper";
+import useVideoData from "../utils/useVideoData";
 import useChannelData from "../utils/useChannelData";
 import { VideoWrapper } from "./index";
 import "../styles/VideoWatchPageSuggestion.css";
 
 const VideoWatchPageSuggestion = ({ video }) => {
-  const id = video?.id; // string
-  const caption = video?.contentDetails?.caption; // string(boolean)
-  const duration = getDuration(video?.contentDetails?.duration); // string
-  const licensedContent = video?.contentDetails?.licensedContent; // boolean
-  const channelId = video?.snippet?.channelId; // string
-  const channelTitle = video?.snippet?.channelTitle; // string
-  const description = video?.snippet?.description; // string
-  const liveBroadcastContent = video?.snippet?.liveBroadcastContent; // string
-  const publishedAt = getPublishTime(video?.snippet?.publishedAt); // string(date)
-  const tags = video?.snippet?.tags; // array(strings)
-  const thumbnailSrc = getThumbnailSrc(video?.snippet?.thumbnails);
-  const title = video?.snippet?.title; // string
-  const commentCount = getCount(video?.statistics?.commentCount); // string(number)
-  const favoriteCount = getCount(video?.statistics?.favoriteCount); // string(number)
-  const likeCount = getCount(video?.statistics?.likeCount); // string(number)
-  const viewCount = getCount(video?.statistics?.viewCount); // string(number)
+  const videoId = video?.id?.videoId;
+  const channelId = video?.snippet?.channelId;
+
+  const {
+    duration,
+    channelTitle,
+    publishedAt,
+    thumbnailSrc,
+    title,
+    viewCount,
+  } = useVideoData(videoId);
 
   const { thumbnailSrc: channelThumbnailSrc } = useChannelData(channelId);
 
@@ -33,7 +23,7 @@ const VideoWatchPageSuggestion = ({ video }) => {
   return (
     <div className="video-watch-page">
       <VideoWrapper
-        id={id}
+        id={videoId}
         thumbnailSrc={thumbnailSrc}
         duration={duration}
         channelThumbnailSrc={channelThumbnailSrc}
@@ -41,7 +31,6 @@ const VideoWatchPageSuggestion = ({ video }) => {
         channelTitle={channelTitle}
         viewCount={viewCount}
         publishedAt={publishedAt}
-        description={description}
       />
     </div>
   );

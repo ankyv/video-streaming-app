@@ -230,6 +230,7 @@ const WatchPage = () => {
         channelTitle={channelTitle}
         playlistId={playlistId}
         index={index}
+        searchQuery={videoTitle}
       />
     </div>
   );
