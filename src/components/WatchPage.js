@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import {
   DislikeIcon,
   DislikeIconFill,
@@ -122,7 +122,9 @@ const WatchPage = () => {
                 <img src={channelThumbnailSrc} />
               </div>
               <div className="channel-data">
-                <h2 className="channel-title">{channelTitle}</h2>
+                <Link to={"/channel/" + channelId}>
+                  <h2 className="channel-title">{channelTitle}</h2>
+                </Link>
                 <p className="channel-subscribers-count">
                   {subscriberCountString} subscribers
                 </p>
